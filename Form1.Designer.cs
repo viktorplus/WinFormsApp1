@@ -71,7 +71,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Убегающая кнопка";
             ResumeLayout(false);
             PerformLayout();
         }

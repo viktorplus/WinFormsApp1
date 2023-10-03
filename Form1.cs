@@ -16,7 +16,7 @@ namespace WinFormsApp1
         {
             button2.Top -= e.Y;
             button2.Left += e.X;
-            if(button2.Top < -10 || button2.Top > 100)
+            if (button2.Top < -10 || button2.Top > 100)
                 button2.Top = 60;
             if (button2.Left < -80 || button2.Left > 250)
                 button2.Left = 120;
