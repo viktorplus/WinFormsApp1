@@ -27,7 +27,7 @@ namespace WinFormsApp1
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             message = "Рекомендации: По запросу";
             len += message.Length;
-            title = $"Среднее количество символов {(int)len/5} Общее {len}";
+            title = $"Среднее количество символов {(int)len / 5} Общее {len}";
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }

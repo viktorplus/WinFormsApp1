@@ -68,7 +68,7 @@
             Cursor = Cursors.Cross;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Резюме";
             ResumeLayout(false);
             PerformLayout();
         }
