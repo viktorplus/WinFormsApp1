@@ -4,22 +4,17 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class HomeUser : Form
+    public partial class Form1 : Form
     {
-        Login loginForm;
-        public HomeUser(Login loginForm)
+        public Form1()
         {
             InitializeComponent();
-            this.loginForm = loginForm;
         }
-
     }
 }
-
