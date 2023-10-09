@@ -17,6 +17,58 @@
         public Form1()
         {
             InitializeComponent();
+            this.MouseDown += Form1_MouseDown;
+            this.MouseDown += Form1_MouseUp;
+            this.MouseMove += Form1_MouseMove;
         }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.Text = $"X: {e.X}, Y: {e.Y}"; // Обновляем заголовок окна
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                string message = "";
+
+                // Проверяем, находится ли точка внутри прямоугольника
+                if (e.X > 10 && e.X < this.ClientSize.Width - 10 &&
+                    e.Y > 10 && e.Y < this.ClientSize.Height - 10)
+                {
+                    message = "Внутри прямоугольника";
+                }
+                else if (e.X >= 0 && e.X <= this.ClientSize.Width &&
+                         e.Y >= 0 && e.Y <= this.ClientSize.Height)
+                {
+                    message = "На границе прямоугольника";
+                }
+                else
+                {
+                    message = "Снаружи прямоугольника";
+                }
+
+                // Проверяем, была ли нажата клавиша Ctrl
+                if (Control.ModifierKeys == Keys.Control)
+                {
+                    this.Close(); // Закрываем приложение
+                }
+                else
+                {
+                    MessageBox.Show(message); // Выводим сообщение
+                }
+            }
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                string message = $"Ширина = {this.ClientSize.Width}, Высота = {this.ClientSize.Height}";
+                this.Text = message; // Обновляем заголовок окна
+            }
+        }
+
     }
 }
