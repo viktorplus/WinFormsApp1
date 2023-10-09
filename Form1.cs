@@ -9,18 +9,36 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool repeat = true;
-            while (repeat)
+            bool playAgain = true;
+            while (playAgain)
             {
                 int targetNumber; // задуманое число
                 int attempts = 0; // количество попыток
-                bool guessed = false; //угадано ли
+                bool guessed = false; //случайное число для угадывания
                 List<int> usedNumbers = new List<int>(); // список номеров использованых при угадывании числа
                 if (int.TryParse(textBox1.Text, out targetNumber)) // проверка на введенное число int
                 {
                     if (targetNumber > 0 && targetNumber <2000) 
                     {
-                        Random random = new Random(DateTime.Now.Millisecond);
+                        //Random random = new Random(DateTime.Now.Millisecond);
+                        while (!guessed)
+                        {
+                            attempts++;
+                            int guess;
+
+                            do
+                            {
+                                guess = new Random().Next(1, 2001); // Генерация случайного числа от 1 до 2000
+                            } while (usedNumbers.Contains(guess));
+
+                            usedNumbers.Add(guess);
+
+                            if (guess == targetNumber)
+                            {
+                                MessageBox.Show($"Компьютер угадал ваше число {targetNumber} за {attempts} попыток.", "Победа", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                guessed = true;
+                            }
+                        }
 
                     }
                     else
@@ -32,6 +50,8 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("Пожалуйста, введите корректное число.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                DialogResult playAgainResult = MessageBox.Show("Хотите сыграть еще раз?", "Еще раз?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                playAgain = (playAgainResult == DialogResult.Yes);
             }
         }
     }
