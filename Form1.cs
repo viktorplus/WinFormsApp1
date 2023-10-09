@@ -12,15 +12,21 @@ namespace WinFormsApp1
             bool repeat = true;
             while (repeat)
             {
-
-                if (int.TryParse(textBox1.Text, out int number))
+                int targetNumber; // задуманое число
+                int attempts = 0; // количество попыток
+                bool guessed = false; //угадано ли
+                List<int> usedNumbers = new List<int>(); // список номеров использованых при угадывании числа
+                if (int.TryParse(textBox1.Text, out targetNumber)) // проверка на введенное число int
                 {
-                    //List <int> Benutzen = new List<int>();
-                    //Random random = new Random();
-                    Random random = new Random(DateTime.Now.Millisecond);
-                    List<int> valuesOfNumberGuess = new List<int>();
-                    var destinctGoods = goods.Select(x => new { x.Name }).Distinct().ToList();
+                    if (targetNumber > 0 && targetNumber <2000) 
+                    {
+                        Random random = new Random(DateTime.Now.Millisecond);
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Пожалуйста, введите корректное число от 1 до 2000.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
