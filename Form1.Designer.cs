@@ -39,8 +39,8 @@
             label1.Size = new Size(38, 15);
             label1.TabIndex = 0;
             label1.Text = "label1";
-            //label1.Click += label1_Click;
-            //label1.MouseClick += label1_MouseClick;
+            label1.Click += label_Click;
+            label1.MouseClick += label_MouseClick;
             // 
             // Form1
             // 
