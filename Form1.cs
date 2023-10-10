@@ -49,7 +49,7 @@ namespace WinFormsApp1
                 }
 
                 // ¬ыводим результат
-                label1.Text = $"ќсталось {result:F2} {(radioButtonYears.Checked ? "год(а)" : radioButtonMonths.Checked ? "мес€ц(ев)" : radioButtonDays.Checked ? "день(дней)" : radioButtonMinutes.Checked ? "минут(ы)" : "секунд(ы)")} до указанной даты.";
+                label1.Text = $"ќт текущей даты {result:F2} {(radioButtonYears.Checked ? "год(а)" : radioButtonMonths.Checked ? "мес€ц(ев)" : radioButtonDays.Checked ? "день(дней)" : radioButtonMinutes.Checked ? "минут(ы)" : "секунд(ы)")} до указанной даты.";
             }
             else
             {

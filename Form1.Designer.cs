@@ -36,6 +36,7 @@
             label1 = new Label();
             textBox1 = new TextBox();
             button1 = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // radioButtonYears
@@ -43,10 +44,10 @@
             radioButtonYears.AutoSize = true;
             radioButtonYears.Location = new Point(129, 120);
             radioButtonYears.Name = "radioButtonYears";
-            radioButtonYears.Size = new Size(94, 19);
+            radioButtonYears.Size = new Size(65, 19);
             radioButtonYears.TabIndex = 0;
             radioButtonYears.TabStop = true;
-            radioButtonYears.Text = "radioButton1";
+            radioButtonYears.Text = "В годах";
             radioButtonYears.UseVisualStyleBackColor = true;
             // 
             // radioButtonMonths
@@ -54,10 +55,10 @@
             radioButtonMonths.AutoSize = true;
             radioButtonMonths.Location = new Point(129, 154);
             radioButtonMonths.Name = "radioButtonMonths";
-            radioButtonMonths.Size = new Size(94, 19);
+            radioButtonMonths.Size = new Size(81, 19);
             radioButtonMonths.TabIndex = 1;
             radioButtonMonths.TabStop = true;
-            radioButtonMonths.Text = "radioButton2";
+            radioButtonMonths.Text = "В месяцах";
             radioButtonMonths.UseVisualStyleBackColor = true;
             // 
             // radioButtonDays
@@ -65,10 +66,10 @@
             radioButtonDays.AutoSize = true;
             radioButtonDays.Location = new Point(129, 188);
             radioButtonDays.Name = "radioButtonDays";
-            radioButtonDays.Size = new Size(94, 19);
+            radioButtonDays.Size = new Size(60, 19);
             radioButtonDays.TabIndex = 2;
             radioButtonDays.TabStop = true;
-            radioButtonDays.Text = "radioButton3";
+            radioButtonDays.Text = "В днях";
             radioButtonDays.UseVisualStyleBackColor = true;
             // 
             // radioButtonMinutes
@@ -76,10 +77,10 @@
             radioButtonMinutes.AutoSize = true;
             radioButtonMinutes.Location = new Point(129, 222);
             radioButtonMinutes.Name = "radioButtonMinutes";
-            radioButtonMinutes.Size = new Size(94, 19);
+            radioButtonMinutes.Size = new Size(81, 19);
             radioButtonMinutes.TabIndex = 3;
             radioButtonMinutes.TabStop = true;
-            radioButtonMinutes.Text = "radioButton4";
+            radioButtonMinutes.Text = "В минутах";
             radioButtonMinutes.UseVisualStyleBackColor = true;
             // 
             // radioButtonSeconds
@@ -87,43 +88,53 @@
             radioButtonSeconds.AutoSize = true;
             radioButtonSeconds.Location = new Point(129, 260);
             radioButtonSeconds.Name = "radioButtonSeconds";
-            radioButtonSeconds.Size = new Size(94, 19);
+            radioButtonSeconds.Size = new Size(84, 19);
             radioButtonSeconds.TabIndex = 4;
             radioButtonSeconds.TabStop = true;
-            radioButtonSeconds.Text = "radioButton5";
+            radioButtonSeconds.Text = "В секундах";
             radioButtonSeconds.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(129, 19);
+            label1.Location = new Point(341, 171);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(66, 15);
             label1.TabIndex = 5;
-            label1.Text = "label1";
+            label1.Text = "Результат :";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(135, 88);
+            textBox1.Location = new Point(135, 72);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(195, 23);
             textBox1.TabIndex = 6;
             // 
             // button1
             // 
-            button1.Location = new Point(135, 309);
+            button1.Location = new Point(341, 120);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(100, 23);
             button1.TabIndex = 7;
-            button1.Text = "button1";
+            button1.Text = "Рассчитать";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(132, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(494, 15);
+            label2.TabIndex = 8;
+            label2.Text = "Укажите дату в формате День/Месяц/Год что бы расчитать время до текущего момента";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 314);
+            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
@@ -148,5 +159,6 @@
         private Label label1;
         private TextBox textBox1;
         private Button button1;
+        private Label label2;
     }
 }
