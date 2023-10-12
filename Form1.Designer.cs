@@ -41,18 +41,18 @@
             textBox1 = new TextBox();
             label1 = new Label();
             comboBox1 = new ComboBox();
-            groupBox3 = new GroupBox();
-            label7 = new Label();
-            label6 = new Label();
+            gb_select_type = new GroupBox();
+            lb_oil_amount = new Label();
+            lb_oil_price = new Label();
             groupBox2 = new GroupBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
+            tb_pice_amount = new TextBox();
+            tb_cola_price = new TextBox();
+            tb_fri_amount = new TextBox();
+            tb_fri_price = new TextBox();
+            tb_gamburger_amount = new TextBox();
+            tb_gamburger_price = new TextBox();
+            tb_hotdog_amount = new TextBox();
+            tb_hotdog_price = new TextBox();
             label13 = new Label();
             label12 = new Label();
             checkBox4 = new CheckBox();
@@ -61,15 +61,15 @@
             checkBox1 = new CheckBox();
             groupBox4 = new GroupBox();
             label8 = new Label();
-            label9 = new Label();
+            lb_kafe_price = new Label();
             groupBox5 = new GroupBox();
             pictureBox1 = new PictureBox();
             label10 = new Label();
-            label11 = new Label();
+            lb_sum = new Label();
             button1 = new Button();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
-            groupBox3.SuspendLayout();
+            gb_select_type.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox5.SuspendLayout();
@@ -84,7 +84,7 @@
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(groupBox3);
+            groupBox1.Controls.Add(gb_select_type);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(367, 323);
@@ -203,46 +203,46 @@
             comboBox1.Size = new Size(100, 23);
             comboBox1.TabIndex = 1;
             // 
-            // groupBox3
+            // gb_select_type
             // 
-            groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Location = new Point(20, 202);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(322, 94);
-            groupBox3.TabIndex = 0;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "К оплате";
+            gb_select_type.Controls.Add(lb_oil_amount);
+            gb_select_type.Controls.Add(lb_oil_price);
+            gb_select_type.Location = new Point(20, 202);
+            gb_select_type.Name = "gb_select_type";
+            gb_select_type.Size = new Size(322, 94);
+            gb_select_type.TabIndex = 0;
+            gb_select_type.TabStop = false;
+            gb_select_type.Text = "К оплате";
             // 
-            // label7
+            // lb_oil_amount
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(266, 51);
-            label7.Name = "label7";
-            label7.Size = new Size(29, 15);
-            label7.TabIndex = 11;
-            label7.Text = "грн.";
+            lb_oil_amount.AutoSize = true;
+            lb_oil_amount.Location = new Point(266, 51);
+            lb_oil_amount.Name = "lb_oil_amount";
+            lb_oil_amount.Size = new Size(29, 15);
+            lb_oil_amount.TabIndex = 11;
+            lb_oil_amount.Text = "грн.";
             // 
-            // label6
+            // lb_oil_price
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(146, 33);
-            label6.Name = "label6";
-            label6.Size = new Size(98, 37);
-            label6.TabIndex = 0;
-            label6.Text = "100,00";
+            lb_oil_price.AutoSize = true;
+            lb_oil_price.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_oil_price.Location = new Point(146, 33);
+            lb_oil_price.Name = "lb_oil_price";
+            lb_oil_price.Size = new Size(98, 37);
+            lb_oil_price.TabIndex = 0;
+            lb_oil_price.Text = "100,00";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox8);
-            groupBox2.Controls.Add(textBox9);
-            groupBox2.Controls.Add(textBox10);
-            groupBox2.Controls.Add(textBox11);
-            groupBox2.Controls.Add(textBox7);
-            groupBox2.Controls.Add(textBox6);
-            groupBox2.Controls.Add(textBox5);
-            groupBox2.Controls.Add(textBox4);
+            groupBox2.Controls.Add(tb_pice_amount);
+            groupBox2.Controls.Add(tb_cola_price);
+            groupBox2.Controls.Add(tb_fri_amount);
+            groupBox2.Controls.Add(tb_fri_price);
+            groupBox2.Controls.Add(tb_gamburger_amount);
+            groupBox2.Controls.Add(tb_gamburger_price);
+            groupBox2.Controls.Add(tb_hotdog_amount);
+            groupBox2.Controls.Add(tb_hotdog_price);
             groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(checkBox4);
@@ -257,61 +257,61 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "МиниКафе";
             // 
-            // textBox8
+            // tb_pice_amount
             // 
-            textBox8.Location = new Point(242, 141);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(100, 23);
-            textBox8.TabIndex = 15;
+            tb_pice_amount.Location = new Point(242, 141);
+            tb_pice_amount.Name = "tb_pice_amount";
+            tb_pice_amount.Size = new Size(100, 23);
+            tb_pice_amount.TabIndex = 15;
             // 
-            // textBox9
+            // tb_cola_price
             // 
-            textBox9.Location = new Point(133, 141);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(100, 23);
-            textBox9.TabIndex = 14;
+            tb_cola_price.Location = new Point(133, 141);
+            tb_cola_price.Name = "tb_cola_price";
+            tb_cola_price.Size = new Size(100, 23);
+            tb_cola_price.TabIndex = 14;
             // 
-            // textBox10
+            // tb_fri_amount
             // 
-            textBox10.Location = new Point(242, 116);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(100, 23);
-            textBox10.TabIndex = 13;
+            tb_fri_amount.Location = new Point(242, 116);
+            tb_fri_amount.Name = "tb_fri_amount";
+            tb_fri_amount.Size = new Size(100, 23);
+            tb_fri_amount.TabIndex = 13;
             // 
-            // textBox11
+            // tb_fri_price
             // 
-            textBox11.Location = new Point(133, 116);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(100, 23);
-            textBox11.TabIndex = 12;
+            tb_fri_price.Location = new Point(133, 116);
+            tb_fri_price.Name = "tb_fri_price";
+            tb_fri_price.Size = new Size(100, 23);
+            tb_fri_price.TabIndex = 12;
             // 
-            // textBox7
+            // tb_gamburger_amount
             // 
-            textBox7.Location = new Point(242, 91);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 11;
+            tb_gamburger_amount.Location = new Point(242, 91);
+            tb_gamburger_amount.Name = "tb_gamburger_amount";
+            tb_gamburger_amount.Size = new Size(100, 23);
+            tb_gamburger_amount.TabIndex = 11;
             // 
-            // textBox6
+            // tb_gamburger_price
             // 
-            textBox6.Location = new Point(133, 91);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 10;
+            tb_gamburger_price.Location = new Point(133, 91);
+            tb_gamburger_price.Name = "tb_gamburger_price";
+            tb_gamburger_price.Size = new Size(100, 23);
+            tb_gamburger_price.TabIndex = 10;
             // 
-            // textBox5
+            // tb_hotdog_amount
             // 
-            textBox5.Location = new Point(242, 66);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 9;
+            tb_hotdog_amount.Location = new Point(242, 66);
+            tb_hotdog_amount.Name = "tb_hotdog_amount";
+            tb_hotdog_amount.Size = new Size(100, 23);
+            tb_hotdog_amount.TabIndex = 9;
             // 
-            // textBox4
+            // tb_hotdog_price
             // 
-            textBox4.Location = new Point(133, 66);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 8;
+            tb_hotdog_price.Location = new Point(133, 66);
+            tb_hotdog_price.Name = "tb_hotdog_price";
+            tb_hotdog_price.Size = new Size(100, 23);
+            tb_hotdog_price.TabIndex = 8;
             // 
             // label13
             // 
@@ -374,7 +374,7 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(label8);
-            groupBox4.Controls.Add(label9);
+            groupBox4.Controls.Add(lb_kafe_price);
             groupBox4.Location = new Point(23, 203);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(319, 93);
@@ -391,21 +391,21 @@
             label8.TabIndex = 13;
             label8.Text = "грн.";
             // 
-            // label9
+            // lb_kafe_price
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(143, 32);
-            label9.Name = "label9";
-            label9.Size = new Size(98, 37);
-            label9.TabIndex = 12;
-            label9.Text = "100,00";
+            lb_kafe_price.AutoSize = true;
+            lb_kafe_price.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_kafe_price.Location = new Point(143, 32);
+            lb_kafe_price.Name = "lb_kafe_price";
+            lb_kafe_price.Size = new Size(98, 37);
+            lb_kafe_price.TabIndex = 12;
+            lb_kafe_price.Text = "100,00";
             // 
             // groupBox5
             // 
             groupBox5.Controls.Add(pictureBox1);
             groupBox5.Controls.Add(label10);
-            groupBox5.Controls.Add(label11);
+            groupBox5.Controls.Add(lb_sum);
             groupBox5.Controls.Add(button1);
             groupBox5.Location = new Point(12, 359);
             groupBox5.Name = "groupBox5";
@@ -431,15 +431,15 @@
             label10.TabIndex = 13;
             label10.Text = "грн.";
             // 
-            // label11
+            // lb_sum
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(409, 51);
-            label11.Name = "label11";
-            label11.Size = new Size(98, 37);
-            label11.TabIndex = 12;
-            label11.Text = "100,00";
+            lb_sum.AutoSize = true;
+            lb_sum.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_sum.Location = new Point(409, 51);
+            lb_sum.Name = "lb_sum";
+            lb_sum.Size = new Size(98, 37);
+            lb_sum.TabIndex = 12;
+            lb_sum.Text = "100,00";
             // 
             // button1
             // 
@@ -464,8 +464,8 @@
             groupBox1.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            gb_select_type.ResumeLayout(false);
+            gb_select_type.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox4.ResumeLayout(false);
@@ -479,7 +479,7 @@
         #endregion
 
         private GroupBox groupBox1;
-        private GroupBox groupBox3;
+        private GroupBox gb_select_type;
         private GroupBox groupBox2;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
@@ -495,9 +495,9 @@
         private Label label3;
         private TextBox textBox3;
         private TextBox textBox2;
-        private Label label6;
-        private Label label7;
-        private TextBox textBox4;
+        private Label lb_oil_price;
+        private Label lb_oil_amount;
+        private TextBox tb_hotdog_price;
         private Label label13;
         private Label label12;
         private CheckBox checkBox4;
@@ -505,17 +505,17 @@
         private CheckBox checkBox2;
         private CheckBox checkBox1;
         private Label label8;
-        private Label label9;
+        private Label lb_kafe_price;
         private Label label10;
-        private Label label11;
+        private Label lb_sum;
         private Button button1;
-        private TextBox textBox5;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private TextBox tb_hotdog_amount;
+        private TextBox tb_pice_amount;
+        private TextBox tb_cola_price;
+        private TextBox tb_fri_amount;
+        private TextBox tb_fri_price;
+        private TextBox tb_gamburger_amount;
+        private TextBox tb_gamburger_price;
         private PictureBox pictureBox1;
     }
 }
