@@ -136,6 +136,7 @@
             // 
             // tb_oil_sum
             // 
+            tb_oil_sum.Enabled = false;
             tb_oil_sum.Location = new Point(146, 51);
             tb_oil_sum.Name = "tb_oil_sum";
             tb_oil_sum.Size = new Size(100, 23);
@@ -143,6 +144,7 @@
             // 
             // tb_oil_count
             // 
+            tb_oil_count.Enabled = false;
             tb_oil_count.Location = new Point(146, 18);
             tb_oil_count.Name = "tb_oil_count";
             tb_oil_count.Size = new Size(100, 23);
@@ -231,9 +233,9 @@
             lb_oil_price.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             lb_oil_price.Location = new Point(146, 33);
             lb_oil_price.Name = "lb_oil_price";
-            lb_oil_price.Size = new Size(98, 37);
+            lb_oil_price.Size = new Size(68, 37);
             lb_oil_price.TabIndex = 0;
-            lb_oil_price.Text = "100,00";
+            lb_oil_price.Text = "0,00";
             // 
             // groupBox2
             // 
@@ -261,13 +263,16 @@
             // 
             // tb_pice_count
             // 
+            tb_pice_count.Enabled = false;
             tb_pice_count.Location = new Point(242, 141);
             tb_pice_count.Name = "tb_pice_count";
             tb_pice_count.Size = new Size(100, 23);
             tb_pice_count.TabIndex = 15;
+            tb_pice_count.Text = "0";
             // 
             // tb_cola_price
             // 
+            tb_cola_price.Enabled = false;
             tb_cola_price.Location = new Point(133, 141);
             tb_cola_price.Name = "tb_cola_price";
             tb_cola_price.Size = new Size(100, 23);
@@ -275,13 +280,16 @@
             // 
             // tb_fri_count
             // 
+            tb_fri_count.Enabled = false;
             tb_fri_count.Location = new Point(242, 116);
             tb_fri_count.Name = "tb_fri_count";
             tb_fri_count.Size = new Size(100, 23);
             tb_fri_count.TabIndex = 13;
+            tb_fri_count.Text = "0";
             // 
             // tb_fri_price
             // 
+            tb_fri_price.Enabled = false;
             tb_fri_price.Location = new Point(133, 116);
             tb_fri_price.Name = "tb_fri_price";
             tb_fri_price.Size = new Size(100, 23);
@@ -289,13 +297,16 @@
             // 
             // tb_gamburger_count
             // 
+            tb_gamburger_count.Enabled = false;
             tb_gamburger_count.Location = new Point(242, 91);
             tb_gamburger_count.Name = "tb_gamburger_count";
             tb_gamburger_count.Size = new Size(100, 23);
             tb_gamburger_count.TabIndex = 11;
+            tb_gamburger_count.Text = "0";
             // 
             // tb_gamburger_price
             // 
+            tb_gamburger_price.Enabled = false;
             tb_gamburger_price.Location = new Point(133, 91);
             tb_gamburger_price.Name = "tb_gamburger_price";
             tb_gamburger_price.Size = new Size(100, 23);
@@ -303,13 +314,17 @@
             // 
             // tb_hotdog_count
             // 
+            tb_hotdog_count.Enabled = false;
             tb_hotdog_count.Location = new Point(242, 66);
             tb_hotdog_count.Name = "tb_hotdog_count";
             tb_hotdog_count.Size = new Size(100, 23);
             tb_hotdog_count.TabIndex = 9;
+            tb_hotdog_count.Text = "0";
+            tb_hotdog_count.TextChanged += tb_hotdog_count_changed;
             // 
             // tb_hotdog_price
             // 
+            tb_hotdog_price.Enabled = false;
             tb_hotdog_price.Location = new Point(133, 66);
             tb_hotdog_price.Name = "tb_hotdog_price";
             tb_hotdog_price.Size = new Size(100, 23);
@@ -372,6 +387,7 @@
             cb_hotdog.TabIndex = 2;
             cb_hotdog.Text = "Хот Дог";
             cb_hotdog.UseVisualStyleBackColor = true;
+            cb_hotdog.CheckedChanged += cb_hotdog_CheckedChanged;
             // 
             // groupBox4
             // 
@@ -399,9 +415,9 @@
             lb_kafe_price.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             lb_kafe_price.Location = new Point(143, 32);
             lb_kafe_price.Name = "lb_kafe_price";
-            lb_kafe_price.Size = new Size(98, 37);
+            lb_kafe_price.Size = new Size(68, 37);
             lb_kafe_price.TabIndex = 12;
-            lb_kafe_price.Text = "100,00";
+            lb_kafe_price.Text = "0,00";
             // 
             // groupBox5
             // 
@@ -441,9 +457,9 @@
             lb_sum.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             lb_sum.Location = new Point(466, 40);
             lb_sum.Name = "lb_sum";
-            lb_sum.Size = new Size(98, 37);
+            lb_sum.Size = new Size(68, 37);
             lb_sum.TabIndex = 12;
-            lb_sum.Text = "100,00";
+            lb_sum.Text = "0,00";
             // 
             // button1
             // 
