@@ -56,6 +56,7 @@ namespace WinFormsApp1
             {
                 using (StreamWriter sw = new StreamWriter("data.txt", true)) // путь к файлу
                 {
+
                     sw.WriteLine(dataToSave);
                 }
 
