@@ -56,10 +56,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(24, 250);
+            label1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(93, 243);
             label1.Name = "label1";
-            label1.Size = new Size(156, 54);
+            label1.Size = new Size(87, 30);
             label1.TabIndex = 2;
             label1.Text = "0 дней ";
             // 
@@ -95,15 +95,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HighlightText;
-            ClientSize = new Size(800, 800);
+            ClientSize = new Size(484, 461);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
-            FormBorderStyle = FormBorderStyle.None;
-            MaximumSize = new Size(800, 800);
+            MaximumSize = new Size(500, 500);
             Name = "Form1";
             Text = "Расчет времени между датами";
             Paint += Form1_Paint;

@@ -11,6 +11,7 @@ namespace WinFormsApp1
     */
     public partial class Form1 : Form
     {
+        private Graphics g;
         public Form1()
         {
             InitializeComponent();
@@ -38,17 +39,15 @@ namespace WinFormsApp1
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            using (Graphics g = e.Graphics)
+            g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias; // Сглаживание для круга
+            Rectangle rect = this.ClientRectangle;
+            using (Brush brush = new SolidBrush(Color.Indigo))
             {
-                g.SmoothingMode = SmoothingMode.AntiAlias; // Сглаживание для круга
-
-                Rectangle rect = this.ClientRectangle;
-                using (Brush brush = new SolidBrush(Color.Indigo))
-                {
-                    g.FillEllipse(brush, rect);
-                }
+                g.FillEllipse(brush, rect);
             }
         }
+
 
     }
 }
