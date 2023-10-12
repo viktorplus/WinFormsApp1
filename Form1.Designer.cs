@@ -269,6 +269,7 @@
             tb_kola_count.Size = new Size(100, 23);
             tb_kola_count.TabIndex = 15;
             tb_kola_count.Text = "0";
+            tb_kola_count.TextChanged += TextBox_TextChanged;
             // 
             // tb_cola_price
             // 
@@ -286,6 +287,7 @@
             tb_fri_count.Size = new Size(100, 23);
             tb_fri_count.TabIndex = 13;
             tb_fri_count.Text = "0";
+            tb_fri_count.TextChanged += TextBox_TextChanged;
             // 
             // tb_fri_price
             // 
@@ -303,6 +305,7 @@
             tb_gamburger_count.Size = new Size(100, 23);
             tb_gamburger_count.TabIndex = 11;
             tb_gamburger_count.Text = "0";
+            tb_gamburger_count.TextChanged += TextBox_TextChanged;
             // 
             // tb_gamburger_price
             // 
@@ -320,6 +323,7 @@
             tb_hotdog_count.Size = new Size(100, 23);
             tb_hotdog_count.TabIndex = 9;
             tb_hotdog_count.Text = "0";
+            tb_hotdog_count.TextChanged += TextBox_TextChanged;
             // 
             // tb_hotdog_price
             // 
@@ -356,6 +360,7 @@
             cb_kola.TabIndex = 5;
             cb_kola.Text = "Кока Кола";
             cb_kola.UseVisualStyleBackColor = true;
+            cb_kola.CheckedChanged += CheckBox_CheckedChanged;
             // 
             // cb_fri
             // 
@@ -366,6 +371,7 @@
             cb_fri.TabIndex = 4;
             cb_fri.Text = "Картошка Фри";
             cb_fri.UseVisualStyleBackColor = true;
+            cb_fri.CheckedChanged += CheckBox_CheckedChanged;
             // 
             // cb_gamburger
             // 
@@ -376,6 +382,7 @@
             cb_gamburger.TabIndex = 3;
             cb_gamburger.Text = "Гамбургер";
             cb_gamburger.UseVisualStyleBackColor = true;
+            cb_gamburger.CheckedChanged += CheckBox_CheckedChanged;
             // 
             // cb_hotdog
             // 
@@ -386,6 +393,7 @@
             cb_hotdog.TabIndex = 2;
             cb_hotdog.Text = "Хот Дог";
             cb_hotdog.UseVisualStyleBackColor = true;
+            cb_hotdog.CheckedChanged += CheckBox_CheckedChanged;
             // 
             // groupBox4
             // 

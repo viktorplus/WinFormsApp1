@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace WinFormsApp1
 {
@@ -12,20 +13,17 @@ namespace WinFormsApp1
         public int Count { get; set; }
         public double Price { get; set; }
         public double Summa { get; set; }
-        public bool OnOff { get; set; }
         public Gud() {
             Name = string.Empty;
             Count = 0;
             Price = 0;
             Summa = 0;
-            OnOff = false;
         }
         public Gud (string name, int coumt, double price)
         {
             Name = name;
             Count = coumt;  
             Price = price;
-            OnOff= false;
             if (Count > 0)
             {
                 Summa = Price * Count;
@@ -48,6 +46,7 @@ namespace WinFormsApp1
             }
         }
     }
+
     public class Guds
     {
        public List<Gud> gud = new List<Gud>(); 

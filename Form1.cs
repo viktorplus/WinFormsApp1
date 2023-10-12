@@ -8,6 +8,7 @@ namespace WinFormsApp1
         Guds guds;
         CheckBox[] checkBoxes; // Массив для CheckBox
         TextBox[] textBoxes; // Массив для TextBox
+        TextBox[] textBoxesPrice; // Массив для TextBox
 
         public Form1()
         {
@@ -16,6 +17,7 @@ namespace WinFormsApp1
             // Инициализация массивов
             checkBoxes = new CheckBox[] { cb_hotdog, cb_gamburger, cb_fri, cb_kola };
             textBoxes = new TextBox[] { tb_hotdog_count, tb_gamburger_count, tb_fri_count, tb_kola_count };
+            textBoxesPrice = new TextBox[] { tb_hotdog_price, tb_gamburger_price, tb_fri_price, tb_cola_price };
             // Подписываем все CheckBox на одно событие
             foreach (CheckBox checkBox in checkBoxes)
             {
@@ -38,7 +40,11 @@ namespace WinFormsApp1
             for (int i = 0; i < checkBoxes.Length; i++)
             {
                 textBoxes[i].Text = guds.gud[i].Count.ToString();
+                textBoxesPrice[i].Text = guds.gud[i].Price.ToString();
             }
+
+
+
         }
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -48,7 +54,12 @@ namespace WinFormsApp1
             if (index >= 0)
             {
                 textBoxes[index].Enabled = checkBox.Checked;
-                guds.gud[index].OnOff = checkBox.Checked;
+                if (!checkBox.Checked)
+                {
+                    // Если CheckBox выключен, устанавливаем значение в связанном TextBox в 0
+                    textBoxes[index].Text = "0";
+                }
+                GudSumm();
             }
         }
 
@@ -59,7 +70,21 @@ namespace WinFormsApp1
             if (index >= 0 && int.TryParse(textBox.Text, out int targetNumber))
             {
                 guds.gud[index].SetCount(targetNumber);
+                GudSumm();
             }
         }
+        private void GudSumm()
+        {
+            double gudsumm = 0;
+            for (int i = 0; i < checkBoxes.Length; i++)
+            {
+                if (checkBoxes[i].Checked) // Проверяем, включен ли CheckBox
+                {
+                    gudsumm += guds.gud[i].Summa;
+                }
+            }
+            lb_kafe_price.Text = gudsumm.ToString();
+        }
+
     }
 }
