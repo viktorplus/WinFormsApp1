@@ -319,7 +319,7 @@
             tb_hotdog_count.Name = "tb_hotdog_count";
             tb_hotdog_count.Size = new Size(100, 23);
             tb_hotdog_count.TabIndex = 9;
-            tb_hotdog_count.Text = "0";
+            tb_hotdog_count.Text = "1";
             tb_hotdog_count.TextChanged += tb_hotdog_count_changed;
             // 
             // tb_hotdog_price
