@@ -48,7 +48,7 @@ namespace WinFormsApp1
             comboBox_oil.Items.Clear(); // Очищаем существующие элементы, если есть
             foreach (Oil oil in oils.oil)
             {
-                comboBox_oil.Items.Add(oil.Name); // Добавляем название варианта в ComboBox
+                comboBox_oil.Items.Add(oil);
             }
 
 
@@ -100,7 +100,26 @@ namespace WinFormsApp1
 
         private void comboBox_oil_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox_oil.SelectedItem is Oil selectedOil)
+            {
+                tb_oil_price.Enabled = true;
+                tb_oil_price.Text = selectedOil.Price.ToString();
+            }
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) // по обьему
+        {
+            tb_oil_price.Enabled = false;
+            tb_oil_count.Enabled = true;
+            tb_oil_price.Text = string.Empty;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e) // по сумме
+        {
+            tb_oil_count.Enabled = false;
+            tb_oil_price.Enabled = true;
+            tb_oil_count.Text = string.Empty;
+        }
+
     }
 }

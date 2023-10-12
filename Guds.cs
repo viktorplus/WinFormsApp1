@@ -22,10 +22,10 @@ namespace WinFormsApp1
             Price = 0;
             Summa = 0;
         }
-        public Oil (string name, int coumt, double price)
+        public Oil (string name, int count, double price)
         {
             Name = name;
-            Count = coumt;
+            Count = count;
             Price = price;
             if (Count > 0)
             {
@@ -35,6 +35,10 @@ namespace WinFormsApp1
             {
                 Summa = 0;
             }
+        }
+        public override string ToString()
+        {
+            return Name;
         }
     }
      public class Oils
@@ -54,10 +58,10 @@ namespace WinFormsApp1
             Price = 0;
             Summa = 0;
         }
-        public Gud (string name, int coumt, double price)
+        public Gud (string name, int count, double price)
         {
             Name = name;
-            Count = coumt;  
+            Count = count;  
             Price = price;
             if (Count > 0)
             {

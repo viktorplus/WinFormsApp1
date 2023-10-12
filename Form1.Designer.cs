@@ -160,6 +160,7 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Количество";
             radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -171,6 +172,7 @@
             radioButton2.TabStop = true;
             radioButton2.Text = "Сумма";
             radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // label2
             // 
@@ -183,7 +185,6 @@
             // 
             // tb_oil_price
             // 
-            tb_oil_price.Enabled = false;
             tb_oil_price.Location = new Point(166, 86);
             tb_oil_price.Name = "tb_oil_price";
             tb_oil_price.Size = new Size(100, 23);
