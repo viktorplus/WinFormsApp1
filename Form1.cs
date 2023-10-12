@@ -17,8 +17,6 @@ namespace WinFormsApp1
         private double totalRevenue = 0; // общая сумма выручки за день
 
         private System.Windows.Forms.Timer resetFormTimer = new System.Windows.Forms.Timer();
-        private System.Windows.Forms.Timer endOfDayTimer = new System.Windows.Forms.Timer();
-
         public Form1()
         {
             InitializeComponent();
@@ -39,14 +37,10 @@ namespace WinFormsApp1
                 textBox.TextChanged += TextBox_TextChanged;
             }
 
-            // Инициализация таймеров
+            // Инициализация таймера
             resetFormTimer = new System.Windows.Forms.Timer();
             resetFormTimer.Interval = 10000; // 10 секунд
             resetFormTimer.Tick += ResetFormTimer_Tick;
-
-            endOfDayTimer = new System.Windows.Forms.Timer();
-            endOfDayTimer.Interval = 5000; // 10 секунд
-            endOfDayTimer.Tick += EndOfDayTimer_Tick;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,7 +55,6 @@ namespace WinFormsApp1
             oils.oil.Add(new Oil("A-95", 0, 8.6));
             oils.oil.Add(new Oil("A-100", 0, 9.9));
 
-            comboBox_oil.Items.Clear(); // Очищаем существующие элементы, если есть
             foreach (Oil oil in oils.oil)
             {
                 comboBox_oil.Items.Add(oil);
@@ -188,13 +181,6 @@ namespace WinFormsApp1
             resetFormTimer.Stop();
         }
 
-        private void EndOfDayTimer_Tick(object sender, EventArgs e)
-        {
-            // Показать общую сумму выручки за день
-            MessageBox.Show($"Общая сумма выручки за день: {totalRevenue} грн");
-            Close();
-        }
-
         private void ResetForm()
         {
             // Сбросить все значения формы
@@ -221,8 +207,7 @@ namespace WinFormsApp1
             gudsumm = 0;
             oilLiters = 0;
             oilPrice = 0;
-
-            button1_Click(null, null);
+            lb_sum.Text = "0";
 
             // Старт таймера для сброса формы через 10 секунд
             resetFormTimer.Start();
