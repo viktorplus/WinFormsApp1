@@ -6,14 +6,17 @@ namespace WinFormsApp1
     public partial class Form1 : Form
     {
         Guds guds;
+        Oils oils;
         CheckBox[] checkBoxes; // Массив для CheckBox
         TextBox[] textBoxes; // Массив для TextBox
         TextBox[] textBoxesPrice; // Массив для TextBox
+
 
         public Form1()
         {
             InitializeComponent();
             guds = new Guds();
+            oils = new Oils();
             // Инициализация массивов
             checkBoxes = new CheckBox[] { cb_hotdog, cb_gamburger, cb_fri, cb_kola };
             textBoxes = new TextBox[] { tb_hotdog_count, tb_gamburger_count, tb_fri_count, tb_kola_count };
@@ -37,14 +40,23 @@ namespace WinFormsApp1
             guds.gud.Add(new Gud("Картошка Фри", 0, 7.2));
             guds.gud.Add(new Gud("Кока Кола", 0, 4.4));
 
+            oils.oil.Add(new Oil("A-76", 0, 6.4));
+            oils.oil.Add(new Oil("A-92", 0, 7.5));
+            oils.oil.Add(new Oil("A-95", 0, 8.6));
+            oils.oil.Add(new Oil("A-100", 0, 9.9));
+
+            comboBox_oil.Items.Clear(); // Очищаем существующие элементы, если есть
+            foreach (Oil oil in oils.oil)
+            {
+                comboBox_oil.Items.Add(oil.Name); // Добавляем название варианта в ComboBox
+            }
+
+
             for (int i = 0; i < checkBoxes.Length; i++)
             {
                 textBoxes[i].Text = guds.gud[i].Count.ToString();
                 textBoxesPrice[i].Text = guds.gud[i].Price.ToString();
             }
-
-
-
         }
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -86,5 +98,9 @@ namespace WinFormsApp1
             lb_kafe_price.Text = gudsumm.ToString();
         }
 
+        private void comboBox_oil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

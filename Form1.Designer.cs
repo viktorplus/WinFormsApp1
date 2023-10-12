@@ -201,11 +201,11 @@
             // comboBox_oil
             // 
             comboBox_oil.FormattingEnabled = true;
-            comboBox_oil.Items.AddRange(new object[] { "A-76", "A-92", "A-95", "A-100" });
             comboBox_oil.Location = new Point(166, 45);
             comboBox_oil.Name = "comboBox_oil";
             comboBox_oil.Size = new Size(100, 23);
             comboBox_oil.TabIndex = 1;
+            comboBox_oil.SelectedIndexChanged += comboBox_oil_SelectedIndexChanged;
             // 
             // gb_select_type
             // 

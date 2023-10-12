@@ -1,12 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.Schema;
 
 namespace WinFormsApp1
 {
+    public class Oil
+    {
+        public String Name { get; set; }
+        public double Price { get; set; }
+        public int Count { get; set; }
+        public double Summa { get; set; }
+
+        public Oil() {
+            Name = string.Empty;
+            Count = 0;
+            Price = 0;
+            Summa = 0;
+        }
+        public Oil (string name, int coumt, double price)
+        {
+            Name = name;
+            Count = coumt;
+            Price = price;
+            if (Count > 0)
+            {
+                Summa = Price * Count;
+            }
+            else
+            {
+                Summa = 0;
+            }
+        }
+    }
+     public class Oils
+    {
+     public List<Oil> oil = new List<Oil>();
+    }
+
     public class Gud
     {
         public string Name { get; set; }
