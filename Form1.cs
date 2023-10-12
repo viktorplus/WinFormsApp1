@@ -1,14 +1,31 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
         Guds guds;
+        CheckBox[] checkBoxes; // Массив для CheckBox
+        TextBox[] textBoxes; // Массив для TextBox
+
         public Form1()
         {
             InitializeComponent();
             guds = new Guds();
+            // Инициализация массивов
+            checkBoxes = new CheckBox[] { cb_hotdog, cb_gamburger, cb_fri, cb_kola };
+            textBoxes = new TextBox[] { tb_hotdog_count, tb_gamburger_count, tb_fri_count, tb_kola_count };
+            // Подписываем все CheckBox на одно событие
+            foreach (CheckBox checkBox in checkBoxes)
+            {
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
+            }
+            // Подписываем все TextBox на одно событие
+            foreach (TextBox textBox in textBoxes)
+            {
+                textBox.TextChanged += TextBox_TextChanged;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -18,43 +35,30 @@ namespace WinFormsApp1
             guds.gud.Add(new Gud("Картошка Фри", 0, 7.2));
             guds.gud.Add(new Gud("Кока Кола", 0, 4.4));
 
-            tb_hotdog_price.Text = guds.gud[0].Price.ToString();
-            tb_gamburger_price.Text = guds.gud[1].Price.ToString();
-            tb_fri_price.Text = guds.gud[2].Price.ToString();
-            tb_cola_price.Text = guds.gud[3].Price.ToString();
-
-        }
-
-        private void cb_hotdog_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_hotdog.Checked)
+            for (int i = 0; i < checkBoxes.Length; i++)
             {
-                tb_hotdog_count.Enabled = true;
-                guds.gud[0].OnOff = true;
-                tb_hotdog_count.Text = 1.ToString();
-            }
-            else
-            {
-                tb_hotdog_count.Enabled = false;
-                guds.gud[0].OnOff = false;
+                textBoxes[i].Text = guds.gud[i].Count.ToString();
             }
         }
 
-        private void tb_hotdog_count_changed(object sender, EventArgs e)
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(tb_hotdog_count.Text, out int targetNumber)) // проверка на введенное число int
+            CheckBox checkBox = (CheckBox)sender;
+            int index = Array.IndexOf(checkBoxes, checkBox);
+            if (index >= 0)
             {
-                if (targetNumber > 0)
-                {
-                    guds.gud[0].SetCount(targetNumber);
-
-                }
-                else
-                {
-                }
+                textBoxes[index].Enabled = checkBox.Checked;
+                guds.gud[index].OnOff = checkBox.Checked;
             }
-            else
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            int index = Array.IndexOf(textBoxes, textBox);
+            if (index >= 0 && int.TryParse(textBox.Text, out int targetNumber))
             {
+                guds.gud[index].SetCount(targetNumber);
             }
         }
     }

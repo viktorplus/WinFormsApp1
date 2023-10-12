@@ -46,7 +46,7 @@
             lb_oil_amount = new Label();
             lb_oil_price = new Label();
             groupBox2 = new GroupBox();
-            tb_pice_count = new TextBox();
+            tb_kola_count = new TextBox();
             tb_cola_price = new TextBox();
             tb_fri_count = new TextBox();
             tb_fri_price = new TextBox();
@@ -239,7 +239,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(tb_pice_count);
+            groupBox2.Controls.Add(tb_kola_count);
             groupBox2.Controls.Add(tb_cola_price);
             groupBox2.Controls.Add(tb_fri_count);
             groupBox2.Controls.Add(tb_fri_price);
@@ -261,14 +261,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "МиниКафе";
             // 
-            // tb_pice_count
+            // tb_kola_count
             // 
-            tb_pice_count.Enabled = false;
-            tb_pice_count.Location = new Point(242, 141);
-            tb_pice_count.Name = "tb_pice_count";
-            tb_pice_count.Size = new Size(100, 23);
-            tb_pice_count.TabIndex = 15;
-            tb_pice_count.Text = "0";
+            tb_kola_count.Enabled = false;
+            tb_kola_count.Location = new Point(242, 141);
+            tb_kola_count.Name = "tb_kola_count";
+            tb_kola_count.Size = new Size(100, 23);
+            tb_kola_count.TabIndex = 15;
+            tb_kola_count.Text = "0";
             // 
             // tb_cola_price
             // 
@@ -319,8 +319,7 @@
             tb_hotdog_count.Name = "tb_hotdog_count";
             tb_hotdog_count.Size = new Size(100, 23);
             tb_hotdog_count.TabIndex = 9;
-            tb_hotdog_count.Text = "1";
-            tb_hotdog_count.TextChanged += tb_hotdog_count_changed;
+            tb_hotdog_count.Text = "0";
             // 
             // tb_hotdog_price
             // 
@@ -387,7 +386,6 @@
             cb_hotdog.TabIndex = 2;
             cb_hotdog.Text = "Хот Дог";
             cb_hotdog.UseVisualStyleBackColor = true;
-            cb_hotdog.CheckedChanged += cb_hotdog_CheckedChanged;
             // 
             // groupBox4
             // 
@@ -532,7 +530,7 @@
         private Label lb_sum;
         private Button button1;
         private TextBox tb_hotdog_count;
-        private TextBox tb_pice_count;
+        private TextBox tb_kola_count;
         private TextBox tb_cola_price;
         private TextBox tb_fri_count;
         private TextBox tb_fri_price;
