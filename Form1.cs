@@ -11,6 +11,9 @@ namespace WinFormsApp1
         TextBox[] textBoxes; // Массив для TextBox
         TextBox[] textBoxesPrice; // Массив для TextBox
 
+        private double oilLiters = 0; // Изначально нулевое количество литров
+        private double oilPrice = 0;  // Изначально нулевая сумма к оплате
+        private double gudsumm = 0; // общая сумма по продуктам
 
         public Form1()
         {
@@ -51,7 +54,6 @@ namespace WinFormsApp1
                 comboBox_oil.Items.Add(oil);
             }
 
-
             for (int i = 0; i < checkBoxes.Length; i++)
             {
                 textBoxes[i].Text = guds.gud[i].Count.ToString();
@@ -85,6 +87,7 @@ namespace WinFormsApp1
                 GudSumm();
             }
         }
+
         private void GudSumm()
         {
             double gudsumm = 0;
@@ -103,51 +106,48 @@ namespace WinFormsApp1
             if (comboBox_oil.SelectedItem is Oil selectedOil)
             {
                 tb_oil_price.Text = selectedOil.Price.ToString();
-                radioButton1.Enabled = true; radioButton2.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e) // по обьему
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) // по объему
         {
-            tb_oil_price.Enabled = false;
+            tb_oil_sum.Enabled = false;
             tb_oil_count.Enabled = true;
-            tb_oil_price.Text = string.Empty;
+            CalculateOilValue();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e) // по сумме
         {
             tb_oil_count.Enabled = false;
             tb_oil_sum.Enabled = true;
-            tb_oil_count.Text = string.Empty;
+            CalculateOilValue();
         }
 
         private void CalculateOilValue()
         {
-            if (radioButton1.Checked) // Проверяем, выбран ли режим "по объему"
+            if (radioButton1.Checked) // Режим по объему
             {
                 if (double.TryParse(tb_oil_count.Text, out double liters) && comboBox_oil.SelectedItem is Oil selectedOil)
                 {
                     gb_select_type.Text = "Сумма к оплате:";
-                    double totalPrice = liters * selectedOil.Price;
-                    lb_oil_price.Text = $"{totalPrice} грн";
-
-                }
-                else
-                {
-                    lb_oil_price.Text = "Ошибка ввода";
+                    oilLiters = liters;
+                    oilPrice = Math.Round((liters * selectedOil.Price), 2);
+                    lb_oil_price.Text = $"{oilPrice} грн";
+                    tb_oil_sum.Text = oilPrice.ToString();
                 }
             }
-            else if (radioButton2.Checked) // Проверяем, выбран ли режим "по сумме"
+            else if (radioButton2.Checked) // Режим по сумме
             {
-                if (double.TryParse(tb_oil_price.Text, out double totalAmount) && comboBox_oil.SelectedItem is Oil selectedOil)
+                if (double.TryParse(tb_oil_sum.Text, out double totalAmount) && comboBox_oil.SelectedItem is Oil selectedOil)
                 {
                     gb_select_type.Text = "К выдаче:";
-                    double liters = totalAmount / selectedOil.Price;
-                    lb_oil_price.Text = $"{liters} литров";
-                }
-                else
-                {
-                    lb_oil_price.Text = "Ошибка ввода";
+                    oilPrice = totalAmount;
+                    oilLiters = Math.Round((totalAmount / selectedOil.Price), 2);
+                    lb_oil_price.Text = $"{oilLiters} литров";
+                    tb_oil_count.Text = oilLiters.ToString();
                 }
             }
         }
@@ -157,5 +157,10 @@ namespace WinFormsApp1
             CalculateOilValue();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lb_sum.Text=(oilPrice+ gudsumm).ToString();
+        }
     }
 }
+
