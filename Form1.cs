@@ -15,10 +15,6 @@ namespace WinFormsApp1
         public Form1()
         {
             InitializeComponent();
-            this.Anchor = AnchorStyles.None;
-            this.Paint += Form1_Paint;
-            this.Size = new Size(400, 400); // 400x400 пикселей
-
 
         }
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -29,7 +25,7 @@ namespace WinFormsApp1
             int daysDifference = (int)timeSpan.TotalDays;
 
             // Отображаем количество дней на Label
-            label1.Text = "Количество дней: " + daysDifference.ToString();
+            label1.Text = daysDifference.ToString() + " Дней";
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

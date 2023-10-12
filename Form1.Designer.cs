@@ -38,7 +38,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(138, 115);
+            dateTimePicker1.Location = new Point(196, 141);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Enabled = false;
-            dateTimePicker2.Location = new Point(138, 164);
+            dateTimePicker2.Location = new Point(196, 263);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(200, 23);
             dateTimePicker2.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(93, 243);
+            label1.Location = new Point(239, 191);
             label1.Name = "label1";
             label1.Size = new Size(87, 30);
             label1.TabIndex = 2;
@@ -66,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 123);
+            label2.Location = new Point(75, 149);
             label2.Name = "label2";
             label2.Size = new Size(93, 15);
             label2.TabIndex = 3;
@@ -75,7 +75,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 164);
+            label3.Location = new Point(75, 271);
             label3.Name = "label3";
             label3.Size = new Size(86, 15);
             label3.TabIndex = 4;
@@ -84,7 +84,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(24, 210);
+            label4.Location = new Point(41, 203);
             label4.Name = "label4";
             label4.Size = new Size(182, 15);
             label4.TabIndex = 5;
