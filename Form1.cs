@@ -14,6 +14,10 @@ namespace WinFormsApp1
         private double oilLiters = 0; // Изначально нулевое количество литров
         private double oilPrice = 0;  // Изначально нулевая сумма к оплате
         private double gudsumm = 0; // общая сумма по продуктам
+        private double totalRevenue = 0; // общая сумма выручки за день
+
+        private System.Windows.Forms.Timer resetFormTimer = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer endOfDayTimer = new System.Windows.Forms.Timer();
 
         public Form1()
         {
@@ -34,6 +38,15 @@ namespace WinFormsApp1
             {
                 textBox.TextChanged += TextBox_TextChanged;
             }
+
+            // Инициализация таймеров
+            resetFormTimer = new System.Windows.Forms.Timer();
+            resetFormTimer.Interval = 10000; // 10 секунд
+            resetFormTimer.Tick += ResetFormTimer_Tick;
+
+            endOfDayTimer = new System.Windows.Forms.Timer();
+            endOfDayTimer.Interval = 5000; // 10 секунд
+            endOfDayTimer.Tick += EndOfDayTimer_Tick;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -90,7 +103,7 @@ namespace WinFormsApp1
 
         private void GudSumm()
         {
-            double gudsumm = 0;
+            gudsumm = 0;
             for (int i = 0; i < checkBoxes.Length; i++)
             {
                 if (checkBoxes[i].Checked) // Проверяем, включен ли CheckBox
@@ -159,8 +172,60 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lb_sum.Text=(oilPrice+ gudsumm).ToString();
+            lb_sum.Text = (oilPrice + gudsumm).ToString();
+
+            // Увеличить общую сумму выручки за день
+            totalRevenue += oilPrice + gudsumm;
+            DayMoney.Text = totalRevenue.ToString();
+
+            // Запустить таймер для сброса формы через 10 секунд
+            resetFormTimer.Start();
+        }
+
+        private void ResetFormTimer_Tick(object sender, EventArgs e)
+        {
+            ResetForm();
+            resetFormTimer.Stop();
+        }
+
+        private void EndOfDayTimer_Tick(object sender, EventArgs e)
+        {
+            // Показать общую сумму выручки за день
+            MessageBox.Show($"Общая сумма выручки за день: {totalRevenue} грн");
+            Close();
+        }
+
+        private void ResetForm()
+        {
+            // Сбросить все значения формы
+            foreach (var checkBox in checkBoxes)
+            {
+                checkBox.Checked = false;
+            }
+
+            foreach (var textBox in textBoxes)
+            {
+                textBox.Text = "0";
+            }
+
+            comboBox_oil.SelectedIndex = -1;
+            tb_oil_price.Text = "";
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            tb_oil_count.Text = "0";
+            tb_oil_sum.Text = "";
+            lb_kafe_price.Text = "0";
+            lb_oil_price.Text = "0";
+
+            // Сбросить суммы и значения
+            gudsumm = 0;
+            oilLiters = 0;
+            oilPrice = 0;
+
+            button1_Click(null, null);
+
+            // Старт таймера для сброса формы через 10 секунд
+            resetFormTimer.Start();
         }
     }
 }
-

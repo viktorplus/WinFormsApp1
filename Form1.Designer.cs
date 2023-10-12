@@ -67,6 +67,8 @@
             label10 = new Label();
             lb_sum = new Label();
             button1 = new Button();
+            label6 = new Label();
+            DayMoney = new Label();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
             gb_select_type.SuspendLayout();
@@ -428,7 +430,7 @@
             groupBox5.Controls.Add(button1);
             groupBox5.Location = new Point(12, 359);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(776, 117);
+            groupBox5.Size = new Size(500, 117);
             groupBox5.TabIndex = 2;
             groupBox5.TabStop = false;
             groupBox5.Text = "Всего к оплате";
@@ -446,7 +448,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(613, 58);
+            label10.Location = new Point(462, 58);
             label10.Name = "label10";
             label10.Size = new Size(29, 15);
             label10.TabIndex = 13;
@@ -456,7 +458,7 @@
             // 
             lb_sum.AutoSize = true;
             lb_sum.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_sum.Location = new Point(466, 40);
+            lb_sum.Location = new Point(388, 47);
             lb_sum.Name = "lb_sum";
             lb_sum.Size = new Size(68, 37);
             lb_sum.TabIndex = 12;
@@ -472,11 +474,32 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(601, 359);
+            label6.Name = "label6";
+            label6.Size = new Size(122, 15);
+            label6.TabIndex = 15;
+            label6.Text = "Выручка за день, грн";
+            // 
+            // DayMoney
+            // 
+            DayMoney.AutoSize = true;
+            DayMoney.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            DayMoney.Location = new Point(601, 406);
+            DayMoney.Name = "DayMoney";
+            DayMoney.Size = new Size(68, 37);
+            DayMoney.TabIndex = 16;
+            DayMoney.Text = "0,00";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 488);
+            Controls.Add(DayMoney);
+            Controls.Add(label6);
             Controls.Add(groupBox5);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -498,6 +521,7 @@
             groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -540,5 +564,7 @@
         private TextBox tb_gamburger_count;
         private TextBox tb_gamburger_price;
         private PictureBox pictureBox1;
+        private Label label6;
+        private Label DayMoney;
     }
 }
