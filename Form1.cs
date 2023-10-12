@@ -102,8 +102,8 @@ namespace WinFormsApp1
         {
             if (comboBox_oil.SelectedItem is Oil selectedOil)
             {
-                tb_oil_price.Enabled = true;
                 tb_oil_price.Text = selectedOil.Price.ToString();
+                radioButton1.Enabled = true; radioButton2.Enabled = true;
             }
         }
 
@@ -117,8 +117,44 @@ namespace WinFormsApp1
         private void radioButton2_CheckedChanged(object sender, EventArgs e) // по сумме
         {
             tb_oil_count.Enabled = false;
-            tb_oil_price.Enabled = true;
+            tb_oil_sum.Enabled = true;
             tb_oil_count.Text = string.Empty;
+        }
+
+        private void CalculateOilValue()
+        {
+            if (radioButton1.Checked) // Проверяем, выбран ли режим "по объему"
+            {
+                if (double.TryParse(tb_oil_count.Text, out double liters) && comboBox_oil.SelectedItem is Oil selectedOil)
+                {
+                    gb_select_type.Text = "Сумма к оплате:";
+                    double totalPrice = liters * selectedOil.Price;
+                    lb_oil_price.Text = $"{totalPrice} грн";
+
+                }
+                else
+                {
+                    lb_oil_price.Text = "Ошибка ввода";
+                }
+            }
+            else if (radioButton2.Checked) // Проверяем, выбран ли режим "по сумме"
+            {
+                if (double.TryParse(tb_oil_price.Text, out double totalAmount) && comboBox_oil.SelectedItem is Oil selectedOil)
+                {
+                    gb_select_type.Text = "К выдаче:";
+                    double liters = totalAmount / selectedOil.Price;
+                    lb_oil_price.Text = $"{liters} литров";
+                }
+                else
+                {
+                    lb_oil_price.Text = "Ошибка ввода";
+                }
+            }
+        }
+
+        private void UpdateOilValue(object sender, EventArgs e)
+        {
+            CalculateOilValue();
         }
 
     }

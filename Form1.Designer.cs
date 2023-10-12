@@ -43,7 +43,6 @@
             label1 = new Label();
             comboBox_oil = new ComboBox();
             gb_select_type = new GroupBox();
-            lb_oil_amount = new Label();
             lb_oil_price = new Label();
             groupBox2 = new GroupBox();
             tb_kola_count = new TextBox();
@@ -141,6 +140,7 @@
             tb_oil_sum.Name = "tb_oil_sum";
             tb_oil_sum.Size = new Size(100, 23);
             tb_oil_sum.TabIndex = 8;
+            tb_oil_sum.TextChanged += UpdateOilValue;
             // 
             // tb_oil_count
             // 
@@ -149,10 +149,12 @@
             tb_oil_count.Name = "tb_oil_count";
             tb_oil_count.Size = new Size(100, 23);
             tb_oil_count.TabIndex = 7;
+            tb_oil_count.TextChanged += UpdateOilValue;
             // 
             // radioButton1
             // 
             radioButton1.AutoSize = true;
+            radioButton1.Enabled = false;
             radioButton1.Location = new Point(6, 22);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(90, 19);
@@ -165,6 +167,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
+            radioButton2.Enabled = false;
             radioButton2.Location = new Point(6, 55);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(63, 19);
@@ -185,6 +188,7 @@
             // 
             // tb_oil_price
             // 
+            tb_oil_price.Enabled = false;
             tb_oil_price.Location = new Point(166, 86);
             tb_oil_price.Name = "tb_oil_price";
             tb_oil_price.Size = new Size(100, 23);
@@ -210,7 +214,6 @@
             // 
             // gb_select_type
             // 
-            gb_select_type.Controls.Add(lb_oil_amount);
             gb_select_type.Controls.Add(lb_oil_price);
             gb_select_type.Location = new Point(20, 202);
             gb_select_type.Name = "gb_select_type";
@@ -218,15 +221,6 @@
             gb_select_type.TabIndex = 0;
             gb_select_type.TabStop = false;
             gb_select_type.Text = "К оплате";
-            // 
-            // lb_oil_amount
-            // 
-            lb_oil_amount.AutoSize = true;
-            lb_oil_amount.Location = new Point(266, 51);
-            lb_oil_amount.Name = "lb_oil_amount";
-            lb_oil_amount.Size = new Size(29, 15);
-            lb_oil_amount.TabIndex = 11;
-            lb_oil_amount.Text = "грн.";
             // 
             // lb_oil_price
             // 
@@ -525,7 +519,6 @@
         private TextBox tb_oil_sum;
         private TextBox tb_oil_count;
         private Label lb_oil_price;
-        private Label lb_oil_amount;
         private TextBox tb_hotdog_price;
         private Label label13;
         private Label label12;
