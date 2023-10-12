@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             groupBox1 = new GroupBox();
             label5 = new Label();
             groupBox6 = new GroupBox();
@@ -63,10 +64,10 @@
             label8 = new Label();
             lb_kafe_price = new Label();
             groupBox5 = new GroupBox();
-            pictureBox1 = new PictureBox();
             label10 = new Label();
             lb_sum = new Label();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
             gb_select_type.SuspendLayout();
@@ -414,18 +415,10 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Всего к оплате";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(26, 42);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 50);
-            pictureBox1.TabIndex = 14;
-            pictureBox1.TabStop = false;
-            // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(529, 69);
+            label10.Location = new Point(613, 58);
             label10.Name = "label10";
             label10.Size = new Size(29, 15);
             label10.TabIndex = 13;
@@ -435,7 +428,7 @@
             // 
             lb_sum.AutoSize = true;
             lb_sum.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_sum.Location = new Point(409, 51);
+            lb_sum.Location = new Point(466, 40);
             lb_sum.Name = "lb_sum";
             lb_sum.Size = new Size(98, 37);
             lb_sum.TabIndex = 12;
@@ -450,6 +443,16 @@
             button1.Text = "Просчитать";
             button1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.ico;
+            pictureBox1.Location = new Point(26, 34);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -458,6 +461,7 @@
             Controls.Add(groupBox5);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Best Oil";
             groupBox1.ResumeLayout(false);
