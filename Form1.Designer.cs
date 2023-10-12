@@ -34,40 +34,40 @@
             groupBox6 = new GroupBox();
             label4 = new Label();
             label3 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            tb_oil_sum = new TextBox();
+            tb_oil_count = new TextBox();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             label2 = new Label();
-            textBox1 = new TextBox();
+            tb_oil_price = new TextBox();
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            comboBox_oil = new ComboBox();
             gb_select_type = new GroupBox();
             lb_oil_amount = new Label();
             lb_oil_price = new Label();
             groupBox2 = new GroupBox();
-            tb_pice_amount = new TextBox();
+            tb_pice_count = new TextBox();
             tb_cola_price = new TextBox();
-            tb_fri_amount = new TextBox();
+            tb_fri_count = new TextBox();
             tb_fri_price = new TextBox();
-            tb_gamburger_amount = new TextBox();
+            tb_gamburger_count = new TextBox();
             tb_gamburger_price = new TextBox();
-            tb_hotdog_amount = new TextBox();
+            tb_hotdog_count = new TextBox();
             tb_hotdog_price = new TextBox();
             label13 = new Label();
             label12 = new Label();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            cb_kola = new CheckBox();
+            cb_fri = new CheckBox();
+            cb_gamburger = new CheckBox();
+            cb_hotdog = new CheckBox();
             groupBox4 = new GroupBox();
             label8 = new Label();
             lb_kafe_price = new Label();
             groupBox5 = new GroupBox();
+            pictureBox1 = new PictureBox();
             label10 = new Label();
             lb_sum = new Label();
             button1 = new Button();
-            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
             gb_select_type.SuspendLayout();
@@ -82,9 +82,9 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(groupBox6);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(tb_oil_price);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(comboBox_oil);
             groupBox1.Controls.Add(gb_select_type);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
@@ -106,8 +106,8 @@
             // 
             groupBox6.Controls.Add(label4);
             groupBox6.Controls.Add(label3);
-            groupBox6.Controls.Add(textBox3);
-            groupBox6.Controls.Add(textBox2);
+            groupBox6.Controls.Add(tb_oil_sum);
+            groupBox6.Controls.Add(tb_oil_count);
             groupBox6.Controls.Add(radioButton1);
             groupBox6.Controls.Add(radioButton2);
             groupBox6.Location = new Point(20, 116);
@@ -134,19 +134,19 @@
             label3.TabIndex = 9;
             label3.Text = "л.";
             // 
-            // textBox3
+            // tb_oil_sum
             // 
-            textBox3.Location = new Point(146, 51);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 8;
+            tb_oil_sum.Location = new Point(146, 51);
+            tb_oil_sum.Name = "tb_oil_sum";
+            tb_oil_sum.Size = new Size(100, 23);
+            tb_oil_sum.TabIndex = 8;
             // 
-            // textBox2
+            // tb_oil_count
             // 
-            textBox2.Location = new Point(146, 18);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 7;
+            tb_oil_count.Location = new Point(146, 18);
+            tb_oil_count.Name = "tb_oil_count";
+            tb_oil_count.Size = new Size(100, 23);
+            tb_oil_count.TabIndex = 7;
             // 
             // radioButton1
             // 
@@ -179,12 +179,13 @@
             label2.TabIndex = 4;
             label2.Text = "Цена";
             // 
-            // textBox1
+            // tb_oil_price
             // 
-            textBox1.Location = new Point(166, 86);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 3;
+            tb_oil_price.Enabled = false;
+            tb_oil_price.Location = new Point(166, 86);
+            tb_oil_price.Name = "tb_oil_price";
+            tb_oil_price.Size = new Size(100, 23);
+            tb_oil_price.TabIndex = 3;
             // 
             // label1
             // 
@@ -195,14 +196,14 @@
             label1.TabIndex = 2;
             label1.Text = "Бензин";
             // 
-            // comboBox1
+            // comboBox_oil
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "A-76", "A-92", "A-95", "A-100" });
-            comboBox1.Location = new Point(166, 45);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(100, 23);
-            comboBox1.TabIndex = 1;
+            comboBox_oil.FormattingEnabled = true;
+            comboBox_oil.Items.AddRange(new object[] { "A-76", "A-92", "A-95", "A-100" });
+            comboBox_oil.Location = new Point(166, 45);
+            comboBox_oil.Name = "comboBox_oil";
+            comboBox_oil.Size = new Size(100, 23);
+            comboBox_oil.TabIndex = 1;
             // 
             // gb_select_type
             // 
@@ -236,20 +237,20 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(tb_pice_amount);
+            groupBox2.Controls.Add(tb_pice_count);
             groupBox2.Controls.Add(tb_cola_price);
-            groupBox2.Controls.Add(tb_fri_amount);
+            groupBox2.Controls.Add(tb_fri_count);
             groupBox2.Controls.Add(tb_fri_price);
-            groupBox2.Controls.Add(tb_gamburger_amount);
+            groupBox2.Controls.Add(tb_gamburger_count);
             groupBox2.Controls.Add(tb_gamburger_price);
-            groupBox2.Controls.Add(tb_hotdog_amount);
+            groupBox2.Controls.Add(tb_hotdog_count);
             groupBox2.Controls.Add(tb_hotdog_price);
             groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(label12);
-            groupBox2.Controls.Add(checkBox4);
-            groupBox2.Controls.Add(checkBox3);
-            groupBox2.Controls.Add(checkBox2);
-            groupBox2.Controls.Add(checkBox1);
+            groupBox2.Controls.Add(cb_kola);
+            groupBox2.Controls.Add(cb_fri);
+            groupBox2.Controls.Add(cb_gamburger);
+            groupBox2.Controls.Add(cb_hotdog);
             groupBox2.Controls.Add(groupBox4);
             groupBox2.Location = new Point(421, 12);
             groupBox2.Name = "groupBox2";
@@ -258,12 +259,12 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "МиниКафе";
             // 
-            // tb_pice_amount
+            // tb_pice_count
             // 
-            tb_pice_amount.Location = new Point(242, 141);
-            tb_pice_amount.Name = "tb_pice_amount";
-            tb_pice_amount.Size = new Size(100, 23);
-            tb_pice_amount.TabIndex = 15;
+            tb_pice_count.Location = new Point(242, 141);
+            tb_pice_count.Name = "tb_pice_count";
+            tb_pice_count.Size = new Size(100, 23);
+            tb_pice_count.TabIndex = 15;
             // 
             // tb_cola_price
             // 
@@ -272,12 +273,12 @@
             tb_cola_price.Size = new Size(100, 23);
             tb_cola_price.TabIndex = 14;
             // 
-            // tb_fri_amount
+            // tb_fri_count
             // 
-            tb_fri_amount.Location = new Point(242, 116);
-            tb_fri_amount.Name = "tb_fri_amount";
-            tb_fri_amount.Size = new Size(100, 23);
-            tb_fri_amount.TabIndex = 13;
+            tb_fri_count.Location = new Point(242, 116);
+            tb_fri_count.Name = "tb_fri_count";
+            tb_fri_count.Size = new Size(100, 23);
+            tb_fri_count.TabIndex = 13;
             // 
             // tb_fri_price
             // 
@@ -286,12 +287,12 @@
             tb_fri_price.Size = new Size(100, 23);
             tb_fri_price.TabIndex = 12;
             // 
-            // tb_gamburger_amount
+            // tb_gamburger_count
             // 
-            tb_gamburger_amount.Location = new Point(242, 91);
-            tb_gamburger_amount.Name = "tb_gamburger_amount";
-            tb_gamburger_amount.Size = new Size(100, 23);
-            tb_gamburger_amount.TabIndex = 11;
+            tb_gamburger_count.Location = new Point(242, 91);
+            tb_gamburger_count.Name = "tb_gamburger_count";
+            tb_gamburger_count.Size = new Size(100, 23);
+            tb_gamburger_count.TabIndex = 11;
             // 
             // tb_gamburger_price
             // 
@@ -300,12 +301,12 @@
             tb_gamburger_price.Size = new Size(100, 23);
             tb_gamburger_price.TabIndex = 10;
             // 
-            // tb_hotdog_amount
+            // tb_hotdog_count
             // 
-            tb_hotdog_amount.Location = new Point(242, 66);
-            tb_hotdog_amount.Name = "tb_hotdog_amount";
-            tb_hotdog_amount.Size = new Size(100, 23);
-            tb_hotdog_amount.TabIndex = 9;
+            tb_hotdog_count.Location = new Point(242, 66);
+            tb_hotdog_count.Name = "tb_hotdog_count";
+            tb_hotdog_count.Size = new Size(100, 23);
+            tb_hotdog_count.TabIndex = 9;
             // 
             // tb_hotdog_price
             // 
@@ -332,45 +333,45 @@
             label12.TabIndex = 6;
             label12.Text = "Цена";
             // 
-            // checkBox4
+            // cb_kola
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(23, 145);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(82, 19);
-            checkBox4.TabIndex = 5;
-            checkBox4.Text = "Кока Кола";
-            checkBox4.UseVisualStyleBackColor = true;
+            cb_kola.AutoSize = true;
+            cb_kola.Location = new Point(23, 145);
+            cb_kola.Name = "cb_kola";
+            cb_kola.Size = new Size(82, 19);
+            cb_kola.TabIndex = 5;
+            cb_kola.Text = "Кока Кола";
+            cb_kola.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cb_fri
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(23, 120);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(107, 19);
-            checkBox3.TabIndex = 4;
-            checkBox3.Text = "Картошка Фри";
-            checkBox3.UseVisualStyleBackColor = true;
+            cb_fri.AutoSize = true;
+            cb_fri.Location = new Point(23, 120);
+            cb_fri.Name = "cb_fri";
+            cb_fri.Size = new Size(107, 19);
+            cb_fri.TabIndex = 4;
+            cb_fri.Text = "Картошка Фри";
+            cb_fri.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cb_gamburger
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(23, 95);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(85, 19);
-            checkBox2.TabIndex = 3;
-            checkBox2.Text = "Гамбургер";
-            checkBox2.UseVisualStyleBackColor = true;
+            cb_gamburger.AutoSize = true;
+            cb_gamburger.Location = new Point(23, 95);
+            cb_gamburger.Name = "cb_gamburger";
+            cb_gamburger.Size = new Size(85, 19);
+            cb_gamburger.TabIndex = 3;
+            cb_gamburger.Text = "Гамбургер";
+            cb_gamburger.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cb_hotdog
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(23, 70);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(68, 19);
-            checkBox1.TabIndex = 2;
-            checkBox1.Text = "Хот Дог";
-            checkBox1.UseVisualStyleBackColor = true;
+            cb_hotdog.AutoSize = true;
+            cb_hotdog.Location = new Point(23, 70);
+            cb_hotdog.Name = "cb_hotdog";
+            cb_hotdog.Size = new Size(68, 19);
+            cb_hotdog.TabIndex = 2;
+            cb_hotdog.Text = "Хот Дог";
+            cb_hotdog.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -415,6 +416,16 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Всего к оплате";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.ico;
+            pictureBox1.Location = new Point(26, 34);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -443,16 +454,6 @@
             button1.Text = "Просчитать";
             button1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.ico;
-            pictureBox1.Location = new Point(26, 34);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 14;
-            pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -464,6 +465,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Best Oil";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox6.ResumeLayout(false);
@@ -489,36 +491,36 @@
         private GroupBox groupBox5;
         private RadioButton radioButton1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox tb_oil_price;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox comboBox_oil;
         private RadioButton radioButton2;
         private Label label5;
         private GroupBox groupBox6;
         private Label label4;
         private Label label3;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox tb_oil_sum;
+        private TextBox tb_oil_count;
         private Label lb_oil_price;
         private Label lb_oil_amount;
         private TextBox tb_hotdog_price;
         private Label label13;
         private Label label12;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox cb_kola;
+        private CheckBox cb_fri;
+        private CheckBox cb_gamburger;
+        private CheckBox cb_hotdog;
         private Label label8;
         private Label lb_kafe_price;
         private Label label10;
         private Label lb_sum;
         private Button button1;
-        private TextBox tb_hotdog_amount;
-        private TextBox tb_pice_amount;
+        private TextBox tb_hotdog_count;
+        private TextBox tb_pice_count;
         private TextBox tb_cola_price;
-        private TextBox tb_fri_amount;
+        private TextBox tb_fri_count;
         private TextBox tb_fri_price;
-        private TextBox tb_gamburger_amount;
+        private TextBox tb_gamburger_count;
         private TextBox tb_gamburger_price;
         private PictureBox pictureBox1;
     }
