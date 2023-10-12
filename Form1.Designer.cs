@@ -38,7 +38,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(354, 114);
+            dateTimePicker1.Location = new Point(138, 115);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Enabled = false;
-            dateTimePicker2.Location = new Point(354, 163);
+            dateTimePicker2.Location = new Point(138, 164);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(200, 23);
             dateTimePicker2.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(240, 249);
+            label1.Location = new Point(24, 250);
             label1.Name = "label1";
             label1.Size = new Size(156, 54);
             label1.TabIndex = 2;
@@ -66,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(240, 122);
+            label2.Location = new Point(24, 123);
             label2.Name = "label2";
             label2.Size = new Size(93, 15);
             label2.TabIndex = 3;
@@ -75,7 +75,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(240, 163);
+            label3.Location = new Point(24, 164);
             label3.Name = "label3";
             label3.Size = new Size(86, 15);
             label3.TabIndex = 4;
@@ -84,7 +84,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(240, 209);
+            label4.Location = new Point(24, 210);
             label4.Name = "label4";
             label4.Size = new Size(182, 15);
             label4.TabIndex = 5;
@@ -94,15 +94,19 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.HighlightText;
+            ClientSize = new Size(800, 800);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(800, 800);
             Name = "Form1";
             Text = "Расчет времени между датами";
+            Paint += Form1_Paint;
             ResumeLayout(false);
             PerformLayout();
         }

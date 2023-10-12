@@ -1,4 +1,6 @@
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+
 
 namespace WinFormsApp1
 {
@@ -12,6 +14,11 @@ namespace WinFormsApp1
         public Form1()
         {
             InitializeComponent();
+            this.Anchor = AnchorStyles.None;
+            this.Paint += Form1_Paint;
+            this.Size = new Size(400, 400); // 400x400 пикселей
+
+
         }
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -28,5 +35,20 @@ namespace WinFormsApp1
         {
             dateTimePicker2.Enabled = true;
         }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            using (Graphics g = e.Graphics)
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias; // Сглаживание для круга
+
+                Rectangle rect = this.ClientRectangle;
+                using (Brush brush = new SolidBrush(Color.Indigo))
+                {
+                    g.FillEllipse(brush, rect);
+                }
+            }
+        }
+
     }
 }
