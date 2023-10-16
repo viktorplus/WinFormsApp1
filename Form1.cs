@@ -136,13 +136,6 @@ namespace WinFormsApp1
                                 .Select(c => (Color)c.GetValue(null, null))
                                 .ToList();
         }
-        private int GetStep(double listSize, double value)
-        {
-            int percent = (int)((value / listSize) * 100);
-            int number_from_percent = (int)((450 * percent) / 100);
-            int res = 450 - number_from_percent;
-            return res;
-        }
         private void OnPaint(object sender, PaintEventArgs e)
         {
             try
@@ -152,10 +145,8 @@ namespace WinFormsApp1
                 {
                     throw new Exception("Пустий список. Неможливо створити аналітику!");
                 }
-                // словарь для отслеживания количества каждого товара
-                Dictionary<string, int> itemCounts = new Dictionary<string, int>();
 
-                // Заполняем словарь на основе данных о товарах
+                Dictionary<string, int> itemCounts = new Dictionary<string, int>();
                 foreach (Good good in goods)
                 {
                     string itemName = good.Name;
@@ -168,17 +159,21 @@ namespace WinFormsApp1
                         itemCounts[itemName] = good.Amount;
                     }
                 }
+
                 List<Color> ColorsList = ColorStructToList();
                 Random random = new Random(DateTime.Now.Millisecond);
                 int x = 110;
                 int y = 25;
                 int h = 450;
 
+                // Найти товар с максимальным количество единиц товара для 100% высоты
+                int maxItemCount = itemCounts.Values.Max();
+
                 foreach (var item in itemCounts)
                 {
                     int itemCount = item.Value;
-                    int step = GetStep(goods.Count, itemCount);
-                    DrawDiagram(e, new Point(x, y + step), new SolidBrush(ColorsList[random.Next(ColorsList.Count - 1)]), h - step);
+                    int step = (int)(((double)itemCount / maxItemCount) * h);
+                    DrawDiagram(e, new Point(x, y + (h - step)), new SolidBrush(ColorsList[random.Next(ColorsList.Count - 1)]), step);
                     x += 100;
                 }
             }
@@ -187,6 +182,8 @@ namespace WinFormsApp1
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
     }
 }
