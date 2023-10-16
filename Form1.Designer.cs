@@ -317,6 +317,8 @@
             tabAnalitics.Text = "Аналітика";
             tabAnalitics.ToolTipText = "Загальна сторінка інформації";
             tabAnalitics.Paint += OnPaint;
+            tabAnalitics.MouseClick += tabAnalitics_MouseClick;
+
             // 
             // toolTip1
             // 

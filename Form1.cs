@@ -5,6 +5,9 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        // словарь для отслеживания количества каждого товара независимо от количества строк
+        private Dictionary<string, int> itemCounts = new Dictionary<string, int>();
+
         List<Good> goods = new List<Good>();
         public Form1()
         {
@@ -143,8 +146,6 @@ namespace WinFormsApp1
                 {
                     throw new Exception("Пустий список. Неможливо створити аналітику!");
                 }
-                // словарь для отслеживания количества каждого товара независимо от количества строк
-                Dictionary<string, int> itemCounts = new Dictionary<string, int>();
                 foreach (Good good in goods)
                 {
                     string itemName = good.Name;
@@ -197,5 +198,33 @@ namespace WinFormsApp1
                 tabAnalitics.Refresh();
             }
         }
+        private void tabAnalitics_MouseClick(object sender, MouseEventArgs e)
+        {
+            // Проверка, что мы находимся в пределах диаграммы
+            if ( e.X < 100 || e.X > tabAnalitics.Width || e.Y < 25 || e.Y > 475)
+            {
+                return;
+            }
+
+            // Расчитываем индекс столбца, над которым находится мышь
+            int x = 110;
+            int barCount = goods.Count;
+            int barWidth = (int)(tabAnalitics.Width - x - (barCount + 1) * 10) / barCount;
+
+            int columnIndex = (e.X - x) / (barWidth + 10);
+
+            if (columnIndex >= 0 && columnIndex < barCount)
+            {
+                // Имя товара будет ключом в словаре itemCounts
+                string itemName = goods[columnIndex].Name;
+                if (itemCounts.TryGetValue(itemName, out int itemCount))
+                {
+                    // Отобразим информацию о товаре
+                    ToolTip toolTip = new ToolTip();
+                    toolTip.SetToolTip(tabAnalitics, $"{itemName}: {itemCount} шт.");
+                }
+            }
+        }
+
     }
 }
