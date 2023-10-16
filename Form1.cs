@@ -123,7 +123,10 @@ namespace WinFormsApp1
         {
             e.Graphics.DrawLine(new Pen(Color.White, 1), new Point(100, 25), new Point(100, 500));
             e.Graphics.DrawLine(new Pen(Color.White, 1), new Point(75, 475), new Point(875, 475));
-            e.Graphics.DrawString("text", new Font("Arial", 10), new SolidBrush(Color.White), new Point(75, 475));
+            e.Graphics.DrawString("Номенклатура товару", new Font("Arial", 10), new SolidBrush(Color.White), new Point(125, 475));
+            e.Graphics.DrawString("50%", new Font("Arial", 10), new SolidBrush(Color.White), new Point(10, 250));
+
+
         }
         public static List<Color> ColorStructToList()
         {
@@ -140,7 +143,7 @@ namespace WinFormsApp1
                 {
                     throw new Exception("Пустий список. Неможливо створити аналітику!");
                 }
-                // словарь для отслеживания количества каждого товара
+                // словарь для отслеживания количества каждого товара независимо от количества строк
                 Dictionary<string, int> itemCounts = new Dictionary<string, int>();
                 foreach (Good good in goods)
                 {
@@ -169,8 +172,11 @@ namespace WinFormsApp1
                     int itemCount = item.Value;
                     int step = (int)(((double)itemCount / maxItemCount) * h); // Используем максимальное количество для нормализации
                     DrawDiagram(e, new Point(x, y + (h - step)), new SolidBrush(ColorsList[random.Next(ColorsList.Count - 1)]), step, barWidth);
+
                     x += barWidth + 10; // Добавляем отступ между столбцами
                 }
+                string totalItemCountText = $"100% = {maxItemCount} шт.";
+                e.Graphics.DrawString(totalItemCountText, new Font("Arial", 10), new SolidBrush(Color.White), new Point(0, 25));
             }
             catch (Exception ex)
             {
