@@ -71,6 +71,7 @@
             tabControl.SelectedIndex = 0;
             tabControl.Size = new Size(984, 561);
             tabControl.TabIndex = 0;
+            tabControl.SelectedIndexChanged += tabControl_SelectedIndexChanged;
             // 
             // tabHome
             // 
@@ -157,7 +158,7 @@
             groupBox1.Controls.Add(tb_PricePerOne);
             groupBox1.Controls.Add(tb_Desc);
             groupBox1.Controls.Add(tb_GoodName);
-            groupBox1.Font = new Font("SF UI Display", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.ForeColor = SystemColors.Control;
             groupBox1.Location = new Point(6, 6);
             groupBox1.Name = "groupBox1";
@@ -169,80 +170,80 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(17, 186);
             label8.Name = "label8";
-            label8.Size = new Size(49, 21);
+            label8.Size = new Size(52, 20);
             label8.TabIndex = 13;
             label8.Text = "ДАТА";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(17, 141);
             label7.Name = "label7";
-            label7.Size = new Size(128, 21);
+            label7.Size = new Size(140, 20);
             label7.TabIndex = 12;
             label7.Text = "ЗАГАЛЬНА ЦІНА";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(182, 104);
             label6.Name = "label6";
-            label6.Size = new Size(100, 21);
+            label6.Size = new Size(105, 20);
             label6.TabIndex = 11;
             label6.Text = "ЦІНА ЗА ШТ.";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(17, 104);
             label5.Name = "label5";
-            label5.Size = new Size(84, 21);
+            label5.Size = new Size(91, 20);
             label5.TabIndex = 10;
             label5.Text = "КІЛЬКІСТЬ";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(17, 68);
             label4.Name = "label4";
-            label4.Size = new Size(56, 21);
+            label4.Size = new Size(55, 20);
             label4.TabIndex = 9;
             label4.Text = "ОПИС";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(17, 32);
             label3.Name = "label3";
-            label3.Size = new Size(59, 21);
+            label3.Size = new Size(65, 20);
             label3.TabIndex = 8;
             label3.Text = "НАЗВА";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(395, 141);
             label2.Name = "label2";
-            label2.Size = new Size(37, 21);
+            label2.Size = new Size(40, 20);
             label2.TabIndex = 7;
             label2.Text = "ГРН";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(395, 105);
             label1.Name = "label1";
-            label1.Size = new Size(37, 21);
+            label1.Size = new Size(40, 20);
             label1.TabIndex = 6;
             label1.Text = "ГРН";
             // 
@@ -251,7 +252,7 @@
             NUD_Amount.Enabled = false;
             NUD_Amount.Location = new Point(107, 101);
             NUD_Amount.Name = "NUD_Amount";
-            NUD_Amount.Size = new Size(69, 30);
+            NUD_Amount.Size = new Size(69, 29);
             NUD_Amount.TabIndex = 5;
             NUD_Amount.ValueChanged += AmountChanged;
             // 
@@ -260,14 +261,14 @@
             tb_PriceAll.Enabled = false;
             tb_PriceAll.Location = new Point(151, 137);
             tb_PriceAll.Name = "tb_PriceAll";
-            tb_PriceAll.Size = new Size(238, 30);
+            tb_PriceAll.Size = new Size(238, 29);
             tb_PriceAll.TabIndex = 4;
             // 
             // dateTimePicker
             // 
             dateTimePicker.Location = new Point(96, 179);
             dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.Size = new Size(336, 30);
+            dateTimePicker.Size = new Size(336, 29);
             dateTimePicker.TabIndex = 3;
             // 
             // tb_PricePerOne
@@ -275,7 +276,7 @@
             tb_PricePerOne.Enabled = false;
             tb_PricePerOne.Location = new Point(288, 101);
             tb_PricePerOne.Name = "tb_PricePerOne";
-            tb_PricePerOne.Size = new Size(101, 30);
+            tb_PricePerOne.Size = new Size(101, 29);
             tb_PricePerOne.TabIndex = 2;
             tb_PricePerOne.TextChanged += PricePerOneChanged;
             // 
@@ -283,14 +284,14 @@
             // 
             tb_Desc.Location = new Point(82, 65);
             tb_Desc.Name = "tb_Desc";
-            tb_Desc.Size = new Size(350, 30);
+            tb_Desc.Size = new Size(350, 29);
             tb_Desc.TabIndex = 1;
             // 
             // tb_GoodName
             // 
             tb_GoodName.Location = new Point(82, 29);
             tb_GoodName.Name = "tb_GoodName";
-            tb_GoodName.Size = new Size(350, 30);
+            tb_GoodName.Size = new Size(350, 29);
             tb_GoodName.TabIndex = 0;
             tb_GoodName.TextChanged += NameChanged;
             // 

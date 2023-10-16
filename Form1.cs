@@ -112,7 +112,6 @@ namespace WinFormsApp1
         private void SelectedValue(object sender, EventArgs e)
         {
             Good good = (Good)listOfGoods.SelectedItem;
-            //MessageBox.Show(good.ToString());
             tb_GoodName.Text = good.Name;
             tb_Desc.Text = good.Description;
             NUD_Amount.Value = good.Amount;
@@ -125,10 +124,6 @@ namespace WinFormsApp1
             e.Graphics.DrawLine(new Pen(Color.White, 1), new Point(100, 25), new Point(100, 500));
             e.Graphics.DrawLine(new Pen(Color.White, 1), new Point(75, 475), new Point(875, 475));
             e.Graphics.DrawString("text", new Font("Arial", 10), new SolidBrush(Color.White), new Point(75, 475));
-        }
-        private void DrawDiagram(PaintEventArgs e, Point point, Brush brush, int h)
-        {
-            e.Graphics.FillRectangle(brush, point.X, point.Y, 10, h);
         }
         public static List<Color> ColorStructToList()
         {
@@ -145,7 +140,7 @@ namespace WinFormsApp1
                 {
                     throw new Exception("Пустий список. Неможливо створити аналітику!");
                 }
-
+                // словарь для отслеживания количества каждого товара
                 Dictionary<string, int> itemCounts = new Dictionary<string, int>();
                 foreach (Good good in goods)
                 {
@@ -162,19 +157,19 @@ namespace WinFormsApp1
 
                 List<Color> ColorsList = ColorStructToList();
                 Random random = new Random(DateTime.Now.Millisecond);
+                int maxItemCount = itemCounts.Values.Max(); // Определение максимального значения для 100% высоты
                 int x = 110;
                 int y = 25;
                 int h = 450;
-
-                // Найти товар с максимальным количество единиц товара для 100% высоты
-                int maxItemCount = itemCounts.Values.Max();
+                int barCount = itemCounts.Count;
+                int barWidth = (int)(tabAnalitics.Width - x - (barCount + 1) * 10) / barCount; // Равномерное распределение ширины столбцов
 
                 foreach (var item in itemCounts)
                 {
                     int itemCount = item.Value;
-                    int step = (int)(((double)itemCount / maxItemCount) * h);
-                    DrawDiagram(e, new Point(x, y + (h - step)), new SolidBrush(ColorsList[random.Next(ColorsList.Count - 1)]), step);
-                    x += 100;
+                    int step = (int)(((double)itemCount / maxItemCount) * h); // Используем максимальное количество для нормализации
+                    DrawDiagram(e, new Point(x, y + (h - step)), new SolidBrush(ColorsList[random.Next(ColorsList.Count - 1)]), step, barWidth);
+                    x += barWidth + 10; // Добавляем отступ между столбцами
                 }
             }
             catch (Exception ex)
@@ -184,6 +179,17 @@ namespace WinFormsApp1
         }
 
 
+        private void DrawDiagram(PaintEventArgs e, Point point, Brush brush, int h, int barWidth)
+        {
+            e.Graphics.FillRectangle(brush, point.X, point.Y, barWidth, h);
+        }
 
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedTab == tabAnalitics)
+            {
+                tabAnalitics.Refresh();
+            }
+        }
     }
 }
