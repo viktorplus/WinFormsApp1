@@ -214,7 +214,7 @@ namespace WinFormsApp1
 
             // Расчитываем индекс столбца, над которым находится мышь
             int x = 110;
-            int barCount = goods.Count;
+            int barCount = itemCounts.Count;
             int barWidth = (int)(tabAnalitics.Width - x - (barCount + 1) * 10) / barCount;
 
             int columnIndex = (e.X - x) / (barWidth + 10);
