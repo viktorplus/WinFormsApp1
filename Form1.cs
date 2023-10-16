@@ -122,13 +122,13 @@ namespace WinFormsApp1
         }
         private void DrawCord(PaintEventArgs e)
         {
-            e.Graphics.DrawLine(new Pen(Color.White, 2), new Point(100, 25), new Point(100, 500));
-            e.Graphics.DrawLine(new Pen(Color.White, 2), new Point(75, 475), new Point(875, 475));
+            e.Graphics.DrawLine(new Pen(Color.White, 1), new Point(100, 25), new Point(100, 500));
+            e.Graphics.DrawLine(new Pen(Color.White, 1), new Point(75, 475), new Point(875, 475));
             e.Graphics.DrawString("text", new Font("Arial", 10), new SolidBrush(Color.White), new Point(75, 475));
         }
         private void DrawDiagram(PaintEventArgs e, Point point, Brush brush, int h)
         {
-            e.Graphics.FillRectangle(brush, point.X, point.Y, 50, h);
+            e.Graphics.FillRectangle(brush, point.X, point.Y, 10, h);
         }
         public static List<Color> ColorStructToList()
         {
@@ -152,32 +152,41 @@ namespace WinFormsApp1
                 {
                     throw new Exception("Пустий список. Неможливо створити аналітику!");
                 }
+                // словарь для отслеживания количества каждого товара
+                Dictionary<string, int> itemCounts = new Dictionary<string, int>();
+
+                // Заполняем словарь на основе данных о товарах
+                foreach (Good good in goods)
+                {
+                    string itemName = good.Name;
+                    if (itemCounts.ContainsKey(itemName))
+                    {
+                        itemCounts[itemName] += good.Amount;
+                    }
+                    else
+                    {
+                        itemCounts[itemName] = good.Amount;
+                    }
+                }
                 List<Color> ColorsList = ColorStructToList();
                 Random random = new Random(DateTime.Now.Millisecond);
-                List<int> valuesOfNumberOfGoods = new List<int>();
-                var destinctGoods = goods.Select(x => new { x.Name }).Distinct().ToList();
-                foreach (var item in destinctGoods)
-                {
-                    valuesOfNumberOfGoods.Add(goods.FindAll(x => x.Name == item.Name).Count);
-                }
-
                 int x = 110;
                 int y = 25;
                 int h = 450;
-                int size = goods.Count;
-                foreach (var item in valuesOfNumberOfGoods)
+
+                foreach (var item in itemCounts)
                 {
-                    int step = GetStep(size, item);
+                    int itemCount = item.Value;
+                    int step = GetStep(goods.Count, itemCount);
                     DrawDiagram(e, new Point(x, y + step), new SolidBrush(ColorsList[random.Next(ColorsList.Count - 1)]), h - step);
                     x += 100;
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
     }
 }
