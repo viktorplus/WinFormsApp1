@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static WinFormsApp1.Users;
 
 namespace WinFormsApp1
 {
-    public class User
+    public partial class User
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -55,8 +54,5 @@ namespace WinFormsApp1
             return matchingUser != null; // Возвращает true, если пользователь с таким логином и паролем найден
         }
     }
-
-
-
 
 }
