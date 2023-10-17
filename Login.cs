@@ -9,7 +9,7 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Login_Click(object sender, EventArgs e)
         {
             // Получите введенный логин и пароль
             string enteredUsername = txtLogin.Text;
@@ -20,10 +20,11 @@ namespace WinFormsApp1
 
             if (isValidLogin)
             {
+                MessageBox.Show("Ok");
                 // Логин и пароль верны, перейдите к UserForm
-                User user = new User();
+                UserForm1 user = new UserForm1();
                 user.Show();
-                this.Hide(); // Скройте текущую форму входа, если необходимо
+                Hide(); // Скройте текущую форму входа, если необходимо
             }
             else
             {
@@ -33,11 +34,12 @@ namespace WinFormsApp1
         }
 
 
-        private void button_registration_Click(object sender, EventArgs e)
+        private void Loginbutton_registration_Click(object sender, EventArgs e)
         {
             RegistationForm Registration = new RegistationForm(this);
             this.Visible = false;
             Registration.Show();
         }
+
     }
 }

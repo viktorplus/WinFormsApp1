@@ -76,6 +76,7 @@
             button_login.TabIndex = 4;
             button_login.Text = "Войти";
             button_login.UseVisualStyleBackColor = true;
+            button_login.Click += Login_Click;
             // 
             // button_registration
             // 
@@ -85,7 +86,7 @@
             button_registration.TabIndex = 5;
             button_registration.Text = "Регистрация";
             button_registration.UseVisualStyleBackColor = true;
-            button_registration.Click += button_registration_Click;
+            button_registration.Click += Loginbutton_registration_Click;
             // 
             // LoginForm
             // 
