@@ -28,12 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            lstSearchResults = new ListBox();
+            lstReadingBooks = new ListBox();
+            txtSearchCriteria = new TextBox();
+            btnSearchBooks = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            SuspendLayout();
+            // 
+            // lstSearchResults
+            // 
+            lstSearchResults.FormattingEnabled = true;
+            lstSearchResults.ItemHeight = 15;
+            lstSearchResults.Location = new Point(12, 12);
+            lstSearchResults.Name = "lstSearchResults";
+            lstSearchResults.Size = new Size(360, 364);
+            lstSearchResults.TabIndex = 0;
+            // 
+            // lstReadingBooks
+            // 
+            lstReadingBooks.FormattingEnabled = true;
+            lstReadingBooks.ItemHeight = 15;
+            lstReadingBooks.Location = new Point(395, 12);
+            lstReadingBooks.Name = "lstReadingBooks";
+            lstReadingBooks.Size = new Size(393, 94);
+            lstReadingBooks.TabIndex = 1;
+            // 
+            // txtSearchCriteria
+            // 
+            txtSearchCriteria.Location = new Point(395, 137);
+            txtSearchCriteria.Name = "txtSearchCriteria";
+            txtSearchCriteria.Size = new Size(265, 23);
+            txtSearchCriteria.TabIndex = 2;
+            // 
+            // btnSearchBooks
+            // 
+            btnSearchBooks.Location = new Point(700, 137);
+            btnSearchBooks.Name = "btnSearchBooks";
+            btnSearchBooks.Size = new Size(75, 23);
+            btnSearchBooks.TabIndex = 3;
+            btnSearchBooks.Text = "button1";
+            btnSearchBooks.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(512, 185);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 4;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(395, 185);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 5;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // UserForm1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(btnSearchBooks);
+            Controls.Add(txtSearchCriteria);
+            Controls.Add(lstReadingBooks);
+            Controls.Add(lstSearchResults);
+            Name = "UserForm1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private ListBox lstSearchResults;
+        private ListBox lstReadingBooks;
+        private TextBox txtSearchCriteria;
+        private Button btnSearchBooks;
+        private Button button2;
+        private Button button3;
     }
 }
