@@ -148,6 +148,7 @@
             btnExportText.TabIndex = 11;
             btnExportText.Text = "Экспорт в текстовый файл";
             btnExportText.UseVisualStyleBackColor = true;
+            btnExportText.Click += btnExportText_Click;
             // 
             // btnImportText
             // 
@@ -157,6 +158,7 @@
             btnImportText.TabIndex = 12;
             btnImportText.Text = "Импорт из текстового файла";
             btnImportText.UseVisualStyleBackColor = true;
+            btnImportText.Click += btnImportText_Click;
             // 
             // btnExportXML
             // 
@@ -166,6 +168,7 @@
             btnExportXML.TabIndex = 13;
             btnExportXML.Text = "Экспорт в XML файл";
             btnExportXML.UseVisualStyleBackColor = true;
+            btnExportXML.Click += btnExportXML_Click;
             // 
             // btnImportXML
             // 
@@ -175,6 +178,7 @@
             btnImportXML.TabIndex = 14;
             btnImportXML.Text = "Импорт из XML файла";
             btnImportXML.UseVisualStyleBackColor = true;
+            btnImportXML.Click += btnImportXML_Click;
             // 
             // lstUsers
             // 
