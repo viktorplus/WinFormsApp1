@@ -115,6 +115,7 @@
             button_reg.TabIndex = 8;
             button_reg.Text = "Регистрация";
             button_reg.UseVisualStyleBackColor = true;
+            button_reg.Click += RegistrationButton_Click;
             // 
             // label5
             // 

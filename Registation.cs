@@ -27,9 +27,13 @@ namespace WinFormsApp1
             string telefon = txtTelefon.Text;
             string login = txtLogin.Text;
             string password = txtPassword.Text;
-
             User newUser = new User(name, surname, address, telefon, login, password);
             Users.AddUser(newUser);
+            MessageBox.Show("Ok");
+            Hide();
+            loginForm.Show();
+
+
         }
 
     }
