@@ -11,13 +11,25 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Registation : Form
+    public partial class RegistationForm : Form
     {
-        Login loginForm;
-        public Registation(Login loginForm)
+        LoginForm loginForm;
+        public RegistationForm(LoginForm loginForm)
         {
             InitializeComponent();
             this.loginForm = loginForm;
+        }
+        private void RegistrationButton_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            string surname = txtSurname.Text;
+            string address = txtAdress.Text;
+            string telefon = txtTelefon.Text;
+            string login = txtLogin.Text;
+            string password = txtPassword.Text;
+
+            User newUser = new User(name, surname, address, telefon, login, password);
+            Users.AddUser(newUser);
         }
 
     }
