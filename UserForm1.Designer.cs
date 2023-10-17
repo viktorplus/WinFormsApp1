@@ -64,12 +64,13 @@
             // 
             // btnSearchBooks
             // 
-            btnSearchBooks.Location = new Point(603, 281);
+            btnSearchBooks.Location = new Point(703, 185);
             btnSearchBooks.Name = "btnSearchBooks";
             btnSearchBooks.Size = new Size(75, 23);
             btnSearchBooks.TabIndex = 3;
-            btnSearchBooks.Text = "button1";
+            btnSearchBooks.Text = "поиск";
             btnSearchBooks.UseVisualStyleBackColor = true;
+            btnSearchBooks.Click += btnSearchBooks_Click;
             // 
             // button2
             // 
@@ -79,6 +80,7 @@
             button2.TabIndex = 4;
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -88,6 +90,7 @@
             button3.TabIndex = 5;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // cmbSearchType
             // 
