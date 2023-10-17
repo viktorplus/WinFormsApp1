@@ -34,6 +34,7 @@
             btnSearchBooks = new Button();
             button2 = new Button();
             button3 = new Button();
+            cmbSearchType = new ComboBox();
             SuspendLayout();
             // 
             // lstSearchResults
@@ -63,7 +64,7 @@
             // 
             // btnSearchBooks
             // 
-            btnSearchBooks.Location = new Point(700, 137);
+            btnSearchBooks.Location = new Point(603, 281);
             btnSearchBooks.Name = "btnSearchBooks";
             btnSearchBooks.Size = new Size(75, 23);
             btnSearchBooks.TabIndex = 3;
@@ -88,11 +89,21 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
+            // cmbSearchType
+            // 
+            cmbSearchType.FormattingEnabled = true;
+            cmbSearchType.Items.AddRange(new object[] { "По названию", "По автору", "По жанру" });
+            cmbSearchType.Location = new Point(667, 137);
+            cmbSearchType.Name = "cmbSearchType";
+            cmbSearchType.Size = new Size(121, 23);
+            cmbSearchType.TabIndex = 6;
+            // 
             // UserForm1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbSearchType);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(btnSearchBooks);
@@ -113,5 +124,6 @@
         private Button btnSearchBooks;
         private Button button2;
         private Button button3;
+        private ComboBox cmbSearchType;
     }
 }
