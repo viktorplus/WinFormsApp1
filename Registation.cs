@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class HomeUser : Form
+    public partial class Registation : Form
     {
         Login loginForm;
-        public HomeUser(Login loginForm)
+        public Registation(Login loginForm)
         {
             InitializeComponent();
             this.loginForm = loginForm;

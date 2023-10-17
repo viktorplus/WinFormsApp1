@@ -16,7 +16,7 @@ namespace WinFormsApp1
             {
                 this.Visible = false;
                 MessageBox.Show("Â³òàºìî, " + username + "!", "Óñï³õ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HomeUser homeForm = new HomeUser(this);
+                Registation homeForm = new Registation(this);
                 var result = homeForm.ShowDialog();
                 if (DialogResult.Cancel == result)
                 {
