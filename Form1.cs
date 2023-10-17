@@ -30,7 +30,7 @@ namespace WinFormsApp1
 
             lstUsers.Items.Add(userInfo);
 
-            // Очистите поля TextBox после добавления информации.
+            // Очищаем поля TextBox после добавления информации.
             txtName.Clear();
             txtSurname.Clear();
             txtEmail.Clear();
