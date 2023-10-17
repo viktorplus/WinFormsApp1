@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1
 {
-
     public class User
     {
         public string Name { get; set; }
@@ -17,8 +16,6 @@ namespace WinFormsApp1
         public string Password { get; set; }
         public DateTime DateReg { get; }
         public string Status { get; set; }
-        public List<BookLoan> BookLoans { get; }
-
 
         public User(string name, string surname, string adress, string telefon, string login, string password)
         {
@@ -30,25 +27,11 @@ namespace WinFormsApp1
             Password = password;
             DateReg = DateTime.Now;
             Status = "user";
-            BookLoans = new List<BookLoan>();
         }
 
         public override string ToString()
         {
             return $"{Name} : {Surname} : {Adress} : {Telefon} ";
-        }
-    }
-    public class BookLoan
-    {
-        public Book Book { get; set; }
-        public DateTime LoanDate { get; }
-        public DateTime DueDate { get; }
-
-        public BookLoan(Book book)
-        {
-            Book = book;
-            LoanDate = DateTime.Now;
-            DueDate = LoanDate.AddDays(14); // срок возврата через 14 дней
         }
     }
 
