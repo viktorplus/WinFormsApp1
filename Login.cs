@@ -27,19 +27,19 @@ namespace WinFormsApp1
                 if (userStatus == "user")
                 {
                     // Перенаправить на форму пользователя
-                    UserForm1 userForm = new UserForm1(username);
+                    UserForm1 userForm = new UserForm1(authenticatedUser);
                     userForm.Show();
                 }
                 else if (userStatus == "bibliotekar")
                 {
                     // Перенаправить на форму библиотекаря
-                    BibliotekarForm bibliotekarForm = new BibliotekarForm(username);
+                    BibliotekarForm bibliotekarForm = new BibliotekarForm(authenticatedUser);
                     bibliotekarForm.Show();
                 }
                 else if (userStatus == "admin")
                 {
                     // Перенаправить на форму админа
-                    AdminForm adminForm = new AdminForm(username);
+                    AdminForm adminForm = new AdminForm(authenticatedUser);
                     adminForm.Show();
                 }
             }

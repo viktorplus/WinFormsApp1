@@ -12,7 +12,7 @@ namespace WinFormsApp1
 {
     public partial class BibliotekarForm : Form
     {
-        public BibliotekarForm(String Login)
+        public BibliotekarForm(User authenticatedUser)
         {
             InitializeComponent();
         }

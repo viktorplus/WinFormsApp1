@@ -12,7 +12,7 @@ namespace WinFormsApp1
 {
     public partial class AdminForm : Form
     {
-        public AdminForm(String Login)
+        public AdminForm(User authenticatedUser)
         {
             InitializeComponent();
         }

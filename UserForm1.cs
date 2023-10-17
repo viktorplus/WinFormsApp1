@@ -12,7 +12,7 @@ namespace WinFormsApp1
 {
     public partial class UserForm1 : Form
     {
-        public UserForm1(String Login)
+        public UserForm1(User authenticatedUser)
         {
             InitializeComponent();
         }
