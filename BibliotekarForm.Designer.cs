@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Bibliotekar
+    partial class BibliotekarForm
     {
         /// <summary>
         /// Required designer variable.

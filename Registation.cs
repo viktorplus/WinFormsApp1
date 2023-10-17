@@ -29,7 +29,7 @@ namespace WinFormsApp1
             string password = txtPassword.Text;
             User newUser = new User(name, surname, address, telefon, login, password);
             Users.AddUser(newUser);
-            MessageBox.Show("Ok");
+            //MessageBox.Show("Ok");
             Hide();
             loginForm.Show();
 

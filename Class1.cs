@@ -15,7 +15,7 @@ namespace WinFormsApp1
         public string Login { get; set; }
         public string Password { get; set; }
         public DateTime DateReg { get; }
-        public string Type { get; set; }
+        public string Status { get; set; }
 
         public User(string name, string surname, string adress, string telefon, string login, string password)
         {
@@ -26,7 +26,7 @@ namespace WinFormsApp1
             Login = login;
             Password = password;
             DateReg = DateTime.Now;
-            Type = "user";
+            Status = "user";
         }
 
         public override string ToString()
@@ -46,13 +46,14 @@ namespace WinFormsApp1
         }
 
         // Проверка логина и пароля
-        public static bool CheckLogin(string username, string password)
+        public static User CheckLogin(string username, string password)
         {
             // Ищем пользователя в списке
             User matchingUser = users.FirstOrDefault(user => user.Login == username && user.Password == password);
 
-            return matchingUser != null; // Возвращает true, если пользователь с таким логином и паролем найден
+            return matchingUser; // Возвращает объект User, если пользователь с таким логином и паролем найден, или null, если не найден
         }
+
     }
 
 }

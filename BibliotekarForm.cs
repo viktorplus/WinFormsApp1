@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Bibliotekar : Form
+    public partial class BibliotekarForm : Form
     {
-        public Bibliotekar()
+        public BibliotekarForm(String Login)
         {
             InitializeComponent();
         }

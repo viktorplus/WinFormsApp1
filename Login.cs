@@ -9,26 +9,43 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-        private void Login_Click(object sender, EventArgs e)
+
+        private void LoginButton_Click(object sender, EventArgs e)
         {
-            // Получите введенный логин и пароль
-            string enteredUsername = txtLogin.Text;
-            string enteredPassword = txtPassword.Text;
+            string username = txtLogin.Text;
+            string password = txtPassword.Text;
 
-            // Проверьте логин и пароль
-            bool isValidLogin = Users.CheckLogin(enteredUsername, enteredPassword);
+            // Проверка логина и пароля
+            User authenticatedUser = Users.CheckLogin(username, password);
 
-            if (isValidLogin)
+            if (authenticatedUser != null)
             {
-                MessageBox.Show("Ok");
-                // Логин и пароль верны, перейдите к UserForm
-                UserForm1 user = new UserForm1();
-                user.Show();
-                Hide(); // Скройте текущую форму входа, если необходимо
+                // Пользователь успешно аутентифицирован
+                string userStatus = authenticatedUser.Status;
+
+                // Определение, куда перенаправить пользователя
+                if (userStatus == "user")
+                {
+                    // Перенаправить на форму пользователя
+                    UserForm1 userForm = new UserForm1(username);
+                    userForm.Show();
+                }
+                else if (userStatus == "bibliotekar")
+                {
+                    // Перенаправить на форму библиотекаря
+                    BibliotekarForm bibliotekarForm = new BibliotekarForm(username);
+                    bibliotekarForm.Show();
+                }
+                else if (userStatus == "admin")
+                {
+                    // Перенаправить на форму админа
+                    AdminForm adminForm = new AdminForm(username);
+                    adminForm.Show();
+                }
             }
             else
             {
-                // Логин или пароль неверны, выведите сообщение об ошибке
+                // Ошибка аутентификации
                 MessageBox.Show("Неверный логин или пароль. Попробуйте еще раз.");
             }
         }
