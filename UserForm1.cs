@@ -25,13 +25,13 @@ namespace WinFormsApp1
 
         private void UserForm1_Load(object sender, EventArgs e)
         {
-            // Здесь можно загрузить список книг, которые пользователь уже читает, в ListBox "Книги, взятые в библиотеке"
+            // список книг, которые пользователь уже читае"
             UpdateReadingBooksListBox();
         }
 
         private void btnSearchBooks_Click(object sender, EventArgs e)
         {
-            // Получить параметры поиска (название, автор, жанр) из TextBox
+            // Получить параметры поиска 
             string searchCriteria = txtSearchCriteria.Text;
 
             // Выполнить поиск книг в библиотеке

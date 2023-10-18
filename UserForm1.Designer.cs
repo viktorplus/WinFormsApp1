@@ -74,21 +74,21 @@
             // 
             // button2
             // 
-            button2.Location = new Point(512, 185);
-            button2.Name = "btnReturnBook";
-            button2.Size = new Size(75, 23);
+            button2.Location = new Point(518, 185);
+            button2.Name = "button2";
+            button2.Size = new Size(103, 23);
             button2.TabIndex = 4;
-            button2.Text = "btnReturnBook";
+            button2.Text = "Вернуть книгу";
             button2.UseVisualStyleBackColor = true;
             button2.Click += btnReturnBook_Click;
             // 
             // button3
             // 
             button3.Location = new Point(395, 185);
-            button3.Name = "btnTakeBook";
-            button3.Size = new Size(75, 23);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 23);
             button3.TabIndex = 5;
-            button3.Text = "btnTakeBook";
+            button3.Text = "Взять книгу";
             button3.UseVisualStyleBackColor = true;
             button3.Click += btnTakeBook_Click;
             // 
