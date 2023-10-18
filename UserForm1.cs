@@ -80,6 +80,7 @@ namespace WinFormsApp1
             lstReadingBooks.Items.Clear();
             lstReadingBooks.Items.AddRange(authenticatedUser.BooksReading.ToArray());
         }
+
     }
 
 }
