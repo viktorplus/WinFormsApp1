@@ -65,6 +65,7 @@ namespace WinFormsApp1
 
             return matchingUser; // Возвращает объект User, если пользователь с таким логином и паролем найден, или null, если не найден
         }
+    }
         public class Book
         {
             public string Title { get; set; }
@@ -112,5 +113,4 @@ namespace WinFormsApp1
                 return books.Where(book => book.Genre.Contains(genre, StringComparison.OrdinalIgnoreCase)).ToList();
             }
         }
-    }
 }
