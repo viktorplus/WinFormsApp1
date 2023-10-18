@@ -82,7 +82,11 @@ namespace WinFormsApp1
                 Genre = genre;
                 ISBN = isbn;
             }
+        public override string ToString()
+        {
+            return $"{Title} ({Year}) by {Author}";
         }
+    }
 
         public class Library
         {
